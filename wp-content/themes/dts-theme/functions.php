@@ -230,3 +230,19 @@ add_filter ('bbp_get_single_forum_description', 'no_description' ) ;
 
 
 
+// Remove from forum breadcrumbs: any link that contains 'bbp-breadcrumb-root'
+add_filter( 'bbp_breadcrumbs', 'th_forum_breadcrumbs_root' );
+function th_forum_breadcrumbs_root( $crumbs ) {
+
+	foreach ( $crumbs as $key => $crumb ) {
+
+		if( strpos( $crumb, 'bbp-breadcrumb-root' ) !== false ) {
+			unset( $crumbs[$key] );
+		}
+
+	}
+
+	return $crumbs;
+
+}
+
