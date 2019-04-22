@@ -408,6 +408,7 @@ div.bbp-breadcrumb {
 div.bbp-breadcrumb,
 div.bbp-topic-tags {
 	font-size: 18px;
+	margin-right: 10px;
 }
 
 #bbpress-forums div.bbp-breadcrumb p,
@@ -421,6 +422,9 @@ div.bbp-topic-tags {
 
 #bbp-topic-hot-tags {
 	clear: both;
+}
+#subscription-toggle {
+	float: right;
 }
 
 /* =Search
