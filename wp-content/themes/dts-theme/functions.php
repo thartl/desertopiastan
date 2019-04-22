@@ -227,3 +227,19 @@ function change_translate_text( $translated_text ) {
 add_filter( 'gettext', 'change_translate_text', 20 );
 
 
+// Remove from forum breadcrumbs: any link that contains 'bbp-breadcrumb-root'
+add_filter( 'bbp_breadcrumbs', 'th_forum_breadcrumbs_root' );
+function th_forum_breadcrumbs_root( $crumbs ) {
+
+	foreach ( $crumbs as $key => $crumb ) {
+
+		if( strpos( $crumb, 'bbp-breadcrumb-root' ) !== false ) {
+			unset( $crumbs[$key] );
+		}
+
+	}
+
+	return $crumbs;
+
+}
+
