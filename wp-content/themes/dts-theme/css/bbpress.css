@@ -434,19 +434,22 @@ div.bbp-topic-tags {
 	clear: left;
 }
 
-	#bbpress-forums #bbp-search-form .hidden {
-		height: 0;
-		width: 0;
-		overflow: hidden;
-		position: absolute;
-		background: none;
-		left: -999em;
-	}
+#bbpress-forums #bbp-search-form .hidden {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	position: absolute;
+	background: none;
+	left: -999em;
+}
 
-	#bbpress-forums #bbp-search-form #bbp_search {
-		display: inline-block;
-		width: auto;
-	}
+#bbpress-forums #bbp-search-form #bbp_search {
+	display: inline-block;
+	width: auto;
+	padding: 6px 8px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}	
 
 #bbpress-forums div.bbp-search-form {
 	float: right;
