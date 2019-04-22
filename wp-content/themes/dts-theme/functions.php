@@ -55,7 +55,7 @@ add_action( 'wp_enqueue_scripts', 'pw_base_enqueue_scripts_styles' );
 function pw_base_enqueue_scripts_styles() {
 
 	
-	wp_enqueue_style( 'pw-base-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'pw-base-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Comfortaa:400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';

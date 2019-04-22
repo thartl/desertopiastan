@@ -84,8 +84,12 @@ body.reply-edit .reply {
 	font-size: 18px;
 	overflow: hidden;
 	border: 1px solid #eee;
-	margin-bottom: 20px;
+	//margin-bottom: 20px;
 	clear: both;
+	margin-top: 30px;
+}
+#bbpress-forums ul.bbp-topics .bbp-topic-freshness > a {
+	font-size: 14px;
 }
 
 #bbpress-forums li.bbp-header,
@@ -448,7 +452,7 @@ div.bbp-topic-tags {
 	width: auto;
 	padding: 6px 8px;
     margin-top: 6px;
-    margin-bottom: 20px;
+   // margin-bottom: 20px;
 }	
 
 #bbpress-forums div.bbp-search-form {
@@ -593,21 +597,22 @@ td.bbp-topic-counts {
 	float: left;
 	width: 100%;
 	margin-bottom: 15px;
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 .bbp-topic-pagination {
 	display: inline-block;
 	margin-left: 5px;
 	margin-bottom: 2px;
-	}
-	.bbp-topic-pagination a {
-		font-size: 14px;
-		line-height: 10px;
-		padding: 1px 3px;
-		border: 1px solid #ddd;
-		text-decoration: none;
-	}
+}
+
+.bbp-topic-pagination a {
+	font-size: 14px;
+	line-height: 10px;
+	padding: 1px 3px;
+	border: 1px solid #ddd;
+	text-decoration: none;
+}
 
 
 /* =Forms
@@ -908,6 +913,14 @@ div.bbp-template-notice a {
 	background-color: #ffffe0 !important;
 	font-size: 1.1em;
 }
+/* .bbp-topics-front ul.super-sticky .bbp-topic-freshness,
+.bbp-topics ul.super-sticky .bbp-topic-freshness,
+.bbp-topics ul.sticky .bbp-topic-freshness,
+.bbp-forum-content ul.sticky  .bbp-topic-freshness {
+	background-color: #ffffe0 !important;
+	font-size: .8em;
+} */	
+
 
 /* =Revisions
 -------------------------------------------------------------- */
@@ -982,7 +995,7 @@ div.bbp-template-notice a {
 
 .bbp-logged-in h4 {
 	font-weight: bold;
-	font-size: 1.3em;
+	//font-size: 1.3em;
 	clear: none;
 	margin-bottom: 10px;
 	float: left;

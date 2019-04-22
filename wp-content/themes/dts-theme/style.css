@@ -185,7 +185,7 @@ textarea:focus,
 
 a {
 	color: hotpink;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:focus,
@@ -1012,11 +1012,12 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #000; /* was #fff */
+	background-color: #40b9bf;
+	height: 212px;
 }
 
 .site-header > .wrap {
-	padding: 20px 0;
+	padding: 0;
 }
 .site-header .wrap {
 	padding-left: 5%;
@@ -1025,14 +1026,16 @@ img.alignright,
 .site-header ul.genesis-nav-menu {
 		float: none;
 }
-
+.site-header .widget-area a {
+	color: #fff;
+}
 
 /* ## Title Area
 --------------------------------------------- */
 
 .title-area {
 	float: left;
-	padding: 10px 0;
+	padding: 50px 0 0;
 	width: 100%;
 	text-align: center;
 }
@@ -1055,6 +1058,8 @@ img.alignright,
 	font-weight: 700;
 	line-height: 1.2;
 	text-align: center;
+	font-family: 'Comfortaa';
+	font-weight: 700;
 }
 
 .site-title a,
@@ -1096,11 +1101,21 @@ img.alignright,
 --------------------------------------------- */
 
 .site-header .widget-area {
-	float: right;
-	text-align: center;
+	text-align: right;
 	width: 100%;
+	float: right;	
+	//position: relative;
 }
-
+.widget-wrap {
+	line-height: 0;
+	
+}
+.site-header .widget-area img {
+	width: 230px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
@@ -1618,6 +1633,7 @@ img.alignleft {
 }
 
 
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1957,7 +1973,7 @@ img.alignleft {
 		width: 880px;
 	}
 	.site-header .widget-area {
-		width: 800px;
+		width: 230px;
 	}
 	.content-sidebar-sidebar .content-sidebar-wrap,
 	.sidebar-content-sidebar .content-sidebar-wrap,
