@@ -1058,7 +1058,6 @@ img.alignright,
 	font-weight: 700;
 	line-height: 1.2;
 	text-align: center;
-	font-family: 'Comfortaa';
 	font-weight: 700;
 }
 
@@ -1089,6 +1088,7 @@ img.alignright,
 .site-description,
 .site-title {
 	margin-bottom: 0;
+	font-family: 'Comfortaa';
 }
 
 .header-image .site-description,
@@ -1106,7 +1106,7 @@ img.alignright,
 	float: right;	
 	//position: relative;
 }
-.widget-wrap {
+.site-header .widget-wrap {
 	line-height: 0;
 	
 }
@@ -1614,7 +1614,7 @@ h1.entry-title::before {
 	height: 2.4rem;
 }
 h1.entry-title {
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 img.alignleft {
@@ -1663,7 +1663,7 @@ img.alignleft {
 	}
 	.entry {
 		margin-bottom: 40px;
-		padding: 70px 80px;
+		//padding: 70px 80px;
 	}
 	.comment-respond,
 	.entry-comments,

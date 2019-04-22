@@ -680,6 +680,7 @@ textarea#bbp_forum_content {
 .bbp-reply-form,
 .bbp-topic-tag-form {
 	clear: left;
+	margin-top: 30px;
 }
 body.topic-edit .bbp-topic-form div.avatar img,
 body.reply-edit .bbp-reply-form div.avatar img,
@@ -1163,6 +1164,21 @@ body.my-account #bbpress-forums {
 #bbpress-forums li:hover > div.row-actions {
 	visibility: visible;
 }
+
+
+
+
+
+.bbpress.topic .bbp-header {
+	display: none;
+}
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
  Media Queries
