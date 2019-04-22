@@ -590,6 +590,7 @@ td.bbp-topic-counts {
 	float: left;
 	width: 100%;
 	margin-bottom: 15px;
+	margin-top: 30px;
 }
 
 .bbp-topic-pagination {
@@ -981,6 +982,15 @@ div.bbp-template-notice a {
 	font-size: 1.3em;
 	clear: none;
 	margin-bottom: 10px;
+	float: left;
+}
+.bbp-logged-in .button {
+	padding: 6px 8px;
+	float: right;
+}
+#bbp-search-form input[type="submit"] {
+	padding: 6px 8px;
+	margin-top: 6px;
 }
 
 /* =Avatars
@@ -999,6 +1009,12 @@ div.bbp-template-notice a {
 
 fieldset div.avatar {
 	float: right;
+}
+.bbp-author-avatar img.avatar {
+	width: 30px;
+}
+.bbp-reply-author .bbp-author-avatar img.avatar {
+	width: 115px;
 }
 
 /* =BuddyPress Activity Streams

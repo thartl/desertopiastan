@@ -689,7 +689,7 @@ th:first-child {
 .avatar {
 	border-radius: 50%;
 	float: left;
-	width: 30px;
+	//width: 30px;
 }
 
 .author-box .avatar,
