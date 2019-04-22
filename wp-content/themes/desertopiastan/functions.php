@@ -44,6 +44,11 @@ include_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.p
 // Include the Genesis Connect WooCommerce notice.
 include_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php';
 
+
+// Enqueue style.css and minify, or enqueue style.min.css if available.  Cache-busting and enqueued at higher priority.
+include_once( get_stylesheet_directory() . '/lib/main-style-min.php' );
+
+
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', __( 'Desertopiastan', 'daily-dish-pro' ) );
 define( 'CHILD_THEME_URL', 'https://my.studiopress.com/themes/daily-dish/' );
