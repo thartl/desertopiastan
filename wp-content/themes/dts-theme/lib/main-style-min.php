@@ -43,7 +43,7 @@ function genesis_cache_bust_load_stylesheet() {
 
 	/** MINIFICATION - turn off for development, if TH_WHICH_ENVIRONMENT (set by Which Environment) is not being defined */
 /** DEACTIVATED FOR DEVELOPMENT: (false in if statement) */
-	if ( ! defined( 'TH_WHICH_ENVIRONMENT' ) || TH_WHICH_ENVIRONMENT == 'live' ) {
+	if ( false || ! defined( 'TH_WHICH_ENVIRONMENT' ) || TH_WHICH_ENVIRONMENT == 'live' ) {
 
 		if ( file_exists( $min_stylesheet_location ) ) {
 
