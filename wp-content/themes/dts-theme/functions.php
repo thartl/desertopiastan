@@ -227,11 +227,8 @@ add_filter ('bbp_get_single_forum_description', 'no_description' ) ;
 // add_filter( 'gettext', 'change_translate_text', 20 );
 
 
-
-
-
 // Remove from forum breadcrumbs: any link that contains 'bbp-breadcrumb-root'
-add_filter( 'bbp_breadcrumbs', 'th_forum_breadcrumbs_root' );
+//add_filter( 'bbp_breadcrumbs', 'th_forum_breadcrumbs_root' );
 function th_forum_breadcrumbs_root( $crumbs ) {
 
 	foreach ( $crumbs as $key => $crumb ) {
@@ -245,4 +242,50 @@ function th_forum_breadcrumbs_root( $crumbs ) {
 	return $crumbs;
 
 }
+/*
+Plugin Name: bbPress - Custom Breadcrumbs
+Plugin URI: https://gist.github.com/ntwb/7781901
+Description: bbPress - Custom Breadcrumbs
+Version: 0.1
+Author: Stephen Edgar - Netweb
+Author URI: http://netweb.com.au
+*/
+
+//add_filter('bbp_before_get_breadcrumb_parse_args', 'ntwb_bbpress_custom_breadcrumb' );
+
+function ntwb_bbpress_custom_breadcrumb() {
+
+	// Forum root
+	$args['include_root']    = false;
+	//$args['root_text']    = 'text';
+
+	return $args;
+}
+
+// Increase number of forums
+
+function bbp_increase_forum_per_page( $args = array() ) {
+$args['posts_per_page'] = get_option( '_bbp_forums_per_page', 100 );
+return $args;
+}
+add_filter( 'bbp_before_has_forums_parse_args', 'bbp_increase_forum_per_page' );
+
+/*
+Plugin Name: bbPress - Custom Remove 'Protected:' and 'Private:' title prefixes
+Plugin URI: https://gist.github.com/ntwb/8662354
+Description: bbPress - Custom Remove 'Protected:' and 'Private:' title prefixes
+Version: 0.1
+Author: Stephen Edgar - Netweb
+Author URI: http://netweb.com.au
+*/
+add_filter('protected_title_format', 'ntwb_remove_protected_title');
+function ntwb_remove_protected_title($title) {
+	return '%s';
+}
+add_filter('private_title_format', 'ntwb_remove_private_title');
+function ntwb_remove_private_title($title) {
+	return '%s';
+}
+
+
 

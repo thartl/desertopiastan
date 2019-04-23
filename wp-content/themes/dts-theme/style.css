@@ -156,7 +156,7 @@ body > div {
 }
 
 body {
-	background-color: #eee;
+	background-color: #caebec;
 	color: #333;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
@@ -184,7 +184,7 @@ textarea:focus,
 }
 
 a {
-	color: hotpink;
+	color: #289F41;
 	text-decoration: none;
 }
 
@@ -428,14 +428,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #333;
+	background-color: #323295;
 	border: 0;
+	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 700;
-	padding: 16px 24px;
+	padding: 12px 18px;
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
@@ -451,7 +452,7 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: hotpink;
+	background-color: #289F41;
 	color: #fff;
 }
 
@@ -788,7 +789,7 @@ th:first-child {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: hotpink;
+	color: #289F41;
 }
 
 .widget-title {
@@ -955,7 +956,7 @@ img.alignright,
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: hotpink;
+	background-color: #289F41;
 	color: #fff;
 }
 
@@ -1038,6 +1039,8 @@ img.alignright,
 	padding: 50px 0 0;
 	width: 100%;
 	text-align: center;
+	z-index: 1000;
+	position: relative;
 }
 
 .header-image .title-area {
@@ -1150,7 +1153,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
-	color: hotpink;
+	color: #289F41;
 	/* text-decoration: underline; */
 }
 
@@ -1239,7 +1242,7 @@ img.alignright,
 .sub-menu-toggle:hover {
 	background-color: #fff;
 	border-width: 0;
-	color: hotpink;
+	color: #289F41;
 }
 
 .menu-toggle {
@@ -1476,7 +1479,7 @@ p.entry-meta {
 .archive-pagination a:focus,
 .archive-pagination a:hover,
 .archive-pagination .active a {
-	background-color: hotpink;
+	background-color: #289F41;
 	color: #fff;
 }
 
@@ -1610,7 +1613,7 @@ p.entry-meta {
 
 h1.entry-title::before {
 	content: "\258D";
-	color: hotpink;
+	color: #289F41;
 	height: 2.4rem;
 }
 h1.entry-title {
@@ -1631,7 +1634,9 @@ img.alignleft {
 .home h1.entry-title {
 	display: none;
 }
-
+.home .bbp-search-form {
+	display: none;
+}
 
 
 /* # Media Queries

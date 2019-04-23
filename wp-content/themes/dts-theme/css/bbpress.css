@@ -15,7 +15,7 @@
 #bbpress-forums {
 	background: transparent;
 	clear: both;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 	overflow: hidden;
 	font-size: 18px;
 }
@@ -457,6 +457,7 @@ div.bbp-topic-tags {
 
 #bbpress-forums div.bbp-search-form {
 	float: right;
+	margin-bottom: 20px;
 }
 
 /* =Admin Links
@@ -1169,9 +1170,9 @@ body.my-account #bbpress-forums {
 
 
 
-.bbpress.topic .bbp-header {
+/* .bbpress.topic .bbp-header {
 	display: none;
-}
+} */
 
 
 
