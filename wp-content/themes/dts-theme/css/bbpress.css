@@ -447,7 +447,8 @@ div.bbp-topic-tags {
 	left: -999em;
 }
 
-#bbpress-forums #bbp-search-form #bbp_search {
+#bbpress-forums #bbp-search-form #bbp_search,
+.sidebar #bbp_search {
 	display: inline-block;
 	width: auto;
 	padding: 6px 8px;
