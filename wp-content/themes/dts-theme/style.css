@@ -184,7 +184,7 @@ textarea:focus,
 }
 
 a {
-	color: #289F41;
+	color: #28979f;
 	text-decoration: none;
 }
 
@@ -456,7 +456,7 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #289F41;
+	background-color: #28979f;
 	color: #fff;
 }
 
@@ -793,7 +793,7 @@ th:first-child {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: #289F41;
+	color: #28979f;
 }
 
 .widget-title {
@@ -960,7 +960,7 @@ img.alignright,
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: #289F41;
+	background-color: #28979f;
 	color: #fff;
 }
 
@@ -1157,7 +1157,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
-	color: #289F41;
+	color: #28979f;
 	/* text-decoration: underline; */
 }
 
@@ -1246,7 +1246,7 @@ img.alignright,
 .sub-menu-toggle:hover {
 	background-color: #fff;
 	border-width: 0;
-	color: #289F41;
+	color: #28979f;
 }
 
 .menu-toggle {
@@ -1483,7 +1483,7 @@ p.entry-meta {
 .archive-pagination a:focus,
 .archive-pagination a:hover,
 .archive-pagination .active a {
-	background-color: #289F41;
+	background-color: #28979f;
 	color: #fff;
 }
 
@@ -1617,7 +1617,7 @@ p.entry-meta {
 
 h1.entry-title::before {
 	content: "\258D";
-	color: #289F41;
+	color: #28979f;
 	height: 2.4rem;
 }
 h1.entry-title {
