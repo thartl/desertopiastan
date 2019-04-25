@@ -55,7 +55,7 @@ add_action( 'wp_enqueue_scripts', 'pw_base_enqueue_scripts_styles' );
 function pw_base_enqueue_scripts_styles() {
 
 	
-	wp_enqueue_style( 'pw-base-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Comfortaa:400,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'pw-base-fonts', '//fonts.googleapis.com/css?family=Nunito:300,400,700|Comfortaa:400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
@@ -286,6 +286,7 @@ add_filter('private_title_format', 'ntwb_remove_private_title');
 function ntwb_remove_private_title($title) {
 	return '%s';
 }
-
+// remove post info.
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
 

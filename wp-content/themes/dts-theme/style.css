@@ -158,7 +158,7 @@ body > div {
 body {
 	background-color: #caebec;
 	color: #333;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-size: 20px;
 	font-size: 2rem;
 	-webkit-font-smoothing: antialiased;
@@ -259,7 +259,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Comfortaa', sans-serif;
 	font-weight: 600;
 	line-height: 1.2;
 	margin: 0 0 10px;
@@ -273,6 +273,9 @@ h1 {
 h2 {
 	font-size: 30px;
 	font-size: 3rem;
+}
+h2.entry-title {
+	margin-bottom: 20px;
 }
 
 h3 {
@@ -294,6 +297,7 @@ h6 {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
+
 
 /* ## Objects
 --------------------------------------------- */
@@ -1057,7 +1061,7 @@ img.alignright,
 
 .site-title {
 	font-size: 30px;
-	font-size: 3rem;
+	font-size: 4rem;
 	font-weight: 700;
 	line-height: 1.2;
 	text-align: center;
@@ -1637,7 +1641,16 @@ img.alignleft {
 .home .bbp-search-form {
 	display: none;
 }
-
+h1.archive-title {
+	color: #fff;
+	font-family: 'Comfortaa';
+	font-size: 5rem;
+}
+h2.hero-text {
+    font-family: Comfortaa;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1663,8 +1676,9 @@ img.alignleft {
 	.after-entry,
 	.archive-description,
 	.author-box {
-		margin-bottom: 40px;
-		padding: 60px;
+		margin-bottom: 20px;
+	    padding: 0 0 30px;
+	    background: none;
 	}
 	.entry {
 		margin-bottom: 40px;
@@ -1992,6 +2006,9 @@ img.alignleft {
 	}
 	.sidebar-primary {
 		width: 360px;
+	}
+	.blog .sidebar-primary {
+		margin-top: 120px;
 	}
 	.site-inner,
 	.wrap {
