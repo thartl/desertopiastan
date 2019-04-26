@@ -293,10 +293,10 @@ remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 add_image_size( 'sm-thumb', 100, 100, TRUE );
 
 // Register the three useful image sizes for use in Add Media modal
-// add_filter( 'image_size_names_choose', 'amy_custom_sizes' );
-// function amy_custom_sizes( $sizes ) {
-//     return array_merge( $sizes, array(
-//         'sm-thumb' => __( 'Smaller Thumbnail' ),
-//     ) );
-// }
+add_filter( 'image_size_names_choose', 'amy_custom_sizes' );
+function amy_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'sm-thumb' => __( 'Smaller Thumbnail' ),
+    ) );
+}
 
