@@ -275,7 +275,7 @@ h2 {
 	font-size: 3rem;
 }
 h2.entry-title {
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 h3 {
@@ -1395,6 +1395,7 @@ img.alignright,
 	background-color: #fff;
 	margin-bottom: 5%;
 	padding: 30px;
+	padding-top: 50px;
 }
 
 .entry-content ol,
@@ -1650,6 +1651,13 @@ h2.hero-text {
     font-family: Comfortaa;
     margin-bottom: 30px;
     margin-top: 40px;
+}
+
+.entry-content ul.display-posts-listing {
+	margin: 0;
+}
+.blog .post-1632 {
+	display: none;
 }
 
 /* # Media Queries
