@@ -1654,7 +1654,10 @@ h2.hero-text {
 }
 
 .entry-content ul.display-posts-listing {
-	margin: 0;
+	margin: 0 0 20px 0;
+}
+.entry-content ul.display-posts-listing li {
+	list-style-type: none;
 }
 .blog .post-1632 {
 	display: none;
