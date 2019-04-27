@@ -364,7 +364,6 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
 
 		$maybe_alert_class    = ' spoiler-alert';
-//		$maybe_alert_data = 'data-micromodal-trigger="xx45"';
 		$more_link_text = substr( $more_link_text, 0, - 7 );
 
 	} else {

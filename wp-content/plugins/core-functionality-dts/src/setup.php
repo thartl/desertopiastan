@@ -49,9 +49,8 @@ function enqueue_assets() {
 }
 
 
+// Print modal before </body>
 add_action( 'wp_footer', function() {
-
-//	d( DTS_CORE_FUNCTIONALITY_DIR . 'views/modal.php' );
 
 	include DTS_CORE_FUNCTIONALITY_DIR . 'views/modal.php';
 

@@ -16,7 +16,7 @@ let spoiler_href;
   $( document ).ready( function() {
 
 
-    // Attach alert to links leading to spoilers + save spoiler url to a global
+    // Attach alert to links that point to spoilers + save spoiler url to a global when clicked
     $( '.spoiler-alert' ).on( 'click', function( e ) {
 
       e.preventDefault();
