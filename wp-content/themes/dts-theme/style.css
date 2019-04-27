@@ -507,7 +507,7 @@ table {
 	line-height: 2;
 	margin-bottom: 40px;
 	width: 100%;
-	word-break: break-all;
+	//word-break: break-all;
 }
 
 tbody {
@@ -1662,7 +1662,26 @@ h2.hero-text {
 .blog .post-1632 {
 	display: none;
 }
+.single-post h1.entry-title {
+    margin-bottom: 30px;
+}
+.blog h1.archive-title {
+    display: none;
+}
+#post-cruise-ship tr > td:first-of-type {
+	vertical-align: top;
+	padding-top: 15px;
+}
+table {
+	max-width: 100%;
+}
+#post-recycling .wp-caption.alignleft {
+	margin-bottom: 5px;
+}
+#post-recycling td p {
+	margin-bottom: 0; 
 
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
