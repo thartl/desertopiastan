@@ -349,7 +349,15 @@ function th_add_anchors_to_blog( $entry ) {
 
 add_filter( 'the_content_more_link', 'th_customize_read_more', 10, 2 );
 /**
- * Customize the read-more link: remove anchor
+ * Customize the read-more link: anchor to "balance" of content not used in this version.
+ * Also: detect `spoiler` -> remove `spoiler` from link text + add class.
+ *
+ * @param string $read_more_link
+ * @param string $more_link_text
+ *
+ * @return string
+ * @since   1.0.0
+ *
  */
 function th_customize_read_more( $read_more_link, $more_link_text ) {
 
