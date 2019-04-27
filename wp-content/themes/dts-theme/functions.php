@@ -347,4 +347,25 @@ function th_add_anchors_to_blog( $entry ) {
 }
 
 
+add_filter( 'the_content_more_link', 'th_customize_read_more', 10, 2 );
+/**
+ * Customize the read-more link: remove anchor
+ */
+function th_customize_read_more( $read_more_link, $more_link_text ) {
+
+	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
+
+		$maybe_alert    = ' spoiler-alert';
+		$more_link_text = substr( $more_link_text, 0, - 7 );
+
+	} else {
+
+		$maybe_alert = '';
+
+	}
+
+	return ' <a href="' . get_permalink() . '" class="more-link' . $maybe_alert . '">' . $more_link_text . '</a>';
+
+}
+
 
