@@ -1616,11 +1616,11 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 
-h1.entry-title::before {
+/* h1.entry-title::before {
 	content: "\258D";
 	color: #28979f;
 	height: 2.4rem;
-}
+} */
 h1.entry-title {
 	margin-bottom: 60px;
 }
@@ -1814,6 +1814,9 @@ table {
 	}
 	.sidebar-primary {
 		width: 300px;
+	}
+	.blog .sidebar-primary {
+		margin-top: 50px;
 	}
 
 	.sidebar-secondary {
@@ -2019,7 +2022,7 @@ table {
 		width: 380px;
 	}
 	.content {
-		width: 880px;
+		width: 950px;
 	}
 	.site-header .widget-area {
 		width: 230px;
@@ -2035,10 +2038,7 @@ table {
 		width: 660px;
 	}
 	.sidebar-primary {
-		width: 360px;
-	}
-	.blog .sidebar-primary {
-		margin-top: 120px;
+		width: 290px;
 	}
 	.site-inner,
 	.wrap {
