@@ -38,12 +38,9 @@ let spoiler_href;
 
     // Initialize MicroModal
     MicroModal.init( {
-      // onShow: modal => console.info( `${modal.id} is shown` ), // [1]
-      onShow: console.info( 'hello' ),
-      onClose: modal => console.info( `${modal.id} is hidden` ), // [2]
       disableScroll: true, // [5]
       disableFocus: false, // [6]
-      awaitCloseAnimation: true, // [7]
+      awaitCloseAnimation: false, // [7]
       debugMode: false, // [8]
     } );
 
