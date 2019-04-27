@@ -363,16 +363,17 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 
 	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
 
-		$maybe_alert    = ' spoiler-alert';
+		$maybe_alert_class    = ' spoiler-alert';
+//		$maybe_alert_data = 'data-micromodal-trigger="xx45"';
 		$more_link_text = substr( $more_link_text, 0, - 7 );
 
 	} else {
 
-		$maybe_alert = '';
+		$maybe_alert_class = $maybe_alert_data = '';
 
 	}
 
-	return ' <a href="' . get_permalink() . '" class="more-link' . $maybe_alert . '">' . $more_link_text . '</a>';
+	return ' <a href="' . get_permalink() . '" class="more-link' . $maybe_alert_class . '">' . $more_link_text . '</a>';
 
 }
 

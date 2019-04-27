@@ -1,0 +1,40 @@
+<?php
+/**
+ * Core functionality plugin for Desertopiastan
+ *
+ * @package     ParkdaleWire\DTS_Core
+ * @author      Tomas Hartl
+ * @license     GPL-2.0+
+ *
+ * @wordpress-plugin
+ * Plugin Name: Desertopiastan Core Functionality
+ * Plugin URI:  https://parkdalewire.com
+ * Description: Core functionality plugin for Desertopiastan
+ * Version:     1.0.0
+ * Author:      Tomas Hartl
+ * Author URI:  https://parkdalewire.com
+ * Text Domain: dts-core
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+namespace ParkdaleWire\DTS_Core;
+
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Cheatin&#8217; uh?' );
+}
+
+
+define( 'DTS_CORE_FUNCTIONALITY_PLUGIN', __FILE__ );
+define( 'DTS_CORE_FUNCTIONALITY_DIR', trailingslashit( __DIR__ ) );
+$plugin_url = plugin_dir_url( __FILE__ );
+if ( is_ssl() ) {
+	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
+}
+define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
+define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
+
+
+include __DIR__ . '/src/setup.php';
+
