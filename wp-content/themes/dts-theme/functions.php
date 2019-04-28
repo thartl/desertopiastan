@@ -316,7 +316,7 @@ add_image_size( 'tiny-thumb', 70, 70, true );
 add_filter( 'image_size_names_choose', 'amy_custom_sizes' );
 function amy_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-		'sm-thumb' => __( 'Smaller Thumbnail' ),
+		'sm-thumb'   => __( 'Smaller Thumbnail' ),
 		'tiny-thumb' => __( 'Tinier Thumbnail' ),
 	) );
 }
@@ -368,12 +368,12 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 
 	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
 
-		$maybe_alert_class    = ' spoiler-alert';
-		$more_link_text = substr( $more_link_text, 0, - 7 );
+		$maybe_alert_class = ' spoiler-alert';
+		$more_link_text    = substr( $more_link_text, 0, - 7 );
 
-	} elseif( $wp_query->query_vars['pagename'] = 'guide' ) {
+	} elseif ( $wp_query->query_vars['pagename'] = 'guide' ) {
 
-		$maybe_alert_class    = ' spoiler-alert';
+		$maybe_alert_class = ' spoiler-alert';
 
 	} else {
 
@@ -417,11 +417,59 @@ function be_dps_template_part( $output, $original_atts ) {
 }
 
 
+add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_link', 10, 3 );
+/**
+ * Attaches "Spoiler" warning popup to post listings on the Guide page
+ *
+ * Also removes tags from the Index post title
+ *
+ * @param $output
+ * @param $wrap
+ * @param $title
+ *
+ * @return string|null
+ * @since   1.0.0
+ *
+ */
+function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 
-add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning', 10, 3 );
-function th_attach_spoiler_warning( $output, $wrap, $title ) {
+	global $wp_query, $post;
 
-//	d( $title );
+	// Not on Guide page: Bail now
+	if ( $wp_query->query_vars['pagename'] != 'guide' ) {
+		return $output;
+	}
+
+	// Unexpected HTML structure: Bail now
+	if ( strpos( $title, '<a class="' ) !== 0 ) {
+		return $output;
+	}
+
+
+	// Add class to trigger "Spoiler alert" modal
+	$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
+
+	// Bonus: also remove `a` tags from the "Index" post heading
+	if ( $post->ID == 1660 ) {
+
+		$title = wp_strip_all_tags( $title );
+
+	}
+
+
+	// Build the output.
+	$output = genesis_markup(
+		array(
+			'open'    => "<{$wrap} %s>",
+			'close'   => "</{$wrap}>",
+			'content' => $title,
+			'context' => 'entry-title',
+			'params'  => array(
+				'wrap' => $wrap,
+			),
+			'echo'    => false,
+		)
+	);
 
 	return $output;
 
