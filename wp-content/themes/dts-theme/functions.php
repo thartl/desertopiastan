@@ -379,6 +379,7 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 }
 
 
+add_action( 'display_posts_shortcode_output', 'be_dps_template_part', 10, 2 );
 /**
  * Template Parts with Display Posts Shortcode
  *
@@ -407,6 +408,4 @@ function be_dps_template_part( $output, $original_atts ) {
 
 	return $output;
 }
-
-add_action( 'display_posts_shortcode_output', 'be_dps_template_part', 10, 2 );
 

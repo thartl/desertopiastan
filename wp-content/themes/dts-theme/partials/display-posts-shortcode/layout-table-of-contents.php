@@ -9,11 +9,6 @@
  **/
 
 
-//d( $post );
-//d( $post->post_name );
-
-global $wp;
-
 $post_listing_anchor = '#post-' . $post->post_name;
 
 
