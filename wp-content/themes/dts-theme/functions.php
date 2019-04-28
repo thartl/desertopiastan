@@ -350,7 +350,8 @@ function th_add_anchors_to_blog( $entry ) {
 add_filter( 'the_content_more_link', 'th_customize_read_more', 10, 2 );
 /**
  * Customize the read-more link: anchor to "balance" of content not used in this version.
- * Also: detect `spoiler` -> remove `spoiler` from link text + add class.
+ * Also: detect `spoiler` -> remove `spoiler` from link text + add `spoiler-alert` class.
+ * Or: attach `spoiler-alert` class if on the Guide page
  *
  * @param string $read_more_link
  * @param string $more_link_text
@@ -361,10 +362,16 @@ add_filter( 'the_content_more_link', 'th_customize_read_more', 10, 2 );
  */
 function th_customize_read_more( $read_more_link, $more_link_text ) {
 
+	global $wp_query;
+
 	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
 
 		$maybe_alert_class    = ' spoiler-alert';
 		$more_link_text = substr( $more_link_text, 0, - 7 );
+
+	} elseif( $wp_query->query_vars['pagename'] = 'guide' ) {
+
+		$maybe_alert_class    = ' spoiler-alert';
 
 	} else {
 
@@ -405,5 +412,16 @@ function be_dps_template_part( $output, $original_atts ) {
 	}
 
 	return $output;
+}
+
+
+
+add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning', 10, 3 );
+function th_attach_spoiler_warning( $output, $wrap, $title ) {
+
+//	d( $title );
+
+	return $output;
+
 }
 
