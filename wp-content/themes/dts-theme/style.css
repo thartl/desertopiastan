@@ -1682,6 +1682,12 @@ table {
 	margin-bottom: 0; 
 
 }
+table figcaption {
+	line-height: 1.2;
+}
+#post-work-ship .recycling-trades tr > td:nth-of-type(3) img {
+	width: 50px;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
