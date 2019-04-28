@@ -434,7 +434,7 @@ add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_l
 function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 
 	global $wp_query, $post;
-
+//d( $post->ID );
 	// Not on Guide page: Bail now
 	if ( $wp_query->query_vars['pagename'] != 'guide' ) {
 		return $output;
@@ -450,7 +450,7 @@ function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 	$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
 
 	// Bonus: also remove `a` tags from the "Index" post heading
-	if ( $post->ID == 1660 ) {
+	if ( $post->ID == 1660 || $post->ID == 2060 ) {
 
 		$title = wp_strip_all_tags( $title );
 
