@@ -618,6 +618,12 @@ th:first-child {
 	float: right;
 }
 
+.content-sidebar-wrap::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
 /* ### Content */
 
 .content {
@@ -1814,6 +1820,9 @@ table {
 	}
 	.sidebar-primary {
 		width: 300px;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 40px;
 	}
 	.blog .sidebar-primary {
 		margin-top: 50px;
