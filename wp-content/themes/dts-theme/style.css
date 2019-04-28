@@ -1694,6 +1694,9 @@ table figcaption {
 #post-work-ship .recycling-trades tr > td:nth-of-type(3) img {
 	width: 50px;
 }
+.home article h2 {
+	margin-bottom: 20px;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
