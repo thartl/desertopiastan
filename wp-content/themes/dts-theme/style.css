@@ -190,8 +190,9 @@ a {
 
 a:focus,
 a:hover {
-	color: #333;
+	color: #28979f;
 	text-decoration: none;
+	outline: 0;
 }
 
 p {
@@ -1693,9 +1694,31 @@ table figcaption {
 }
 #post-work-ship .recycling-trades tr > td:nth-of-type(3) img {
 	width: 50px;
+	display: block;
+	margin: 0 auto;
 }
+#post-work-ship .recycling-trades tr > td:nth-of-type(3) .wp-caption {
+	margin: 0 10px 5px;
+}
+.recycling-trades .wp-caption-text {
+	margin-top: 10px;
+}
+
 .home article h2 {
 	margin-bottom: 20px;
+}
+table {
+	//table-layout: fixed;
+	line-height: 1.8;
+}
+table tr th {
+	text-align: center;
+}
+.recycling-trades td:first-of-type {
+	border-right: 1px solid #eee;
+}
+.recycling-trades td:nth-of-type(3) {
+	border-left: 1px solid #eee;
 }
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
