@@ -1697,6 +1697,13 @@ table figcaption {
 .home article h2 {
 	margin-bottom: 20px;
 }
+table {
+	//table-layout: fixed;
+	line-height: 1.8;
+}
+table tr th {
+	text-align: center;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
