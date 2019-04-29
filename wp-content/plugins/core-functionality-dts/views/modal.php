@@ -7,11 +7,11 @@
 				</h2>
 				<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
 			</header>
-			<main class="modal__content" id="modal-1-content">
+			<section class="modal__content" id="modal-1-content">
 				<p>
 					You cannot unsee what lies beyond this link.
 				</p>
-			</main>
+			</section>
 			<footer class="modal__footer">
 				<button id="spoiler-continue" class="modal__btn modal__btn-primary">Continue at your own risk</button>
 			</footer>
