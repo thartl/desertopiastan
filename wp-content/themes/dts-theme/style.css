@@ -1720,7 +1720,12 @@ table tr th {
 .recycling-trades td:nth-of-type(3) {
 	border-left: 1px solid #eee;
 }
-p:empty { display: none; }
+p:empty { 
+	display: none;
+}
+
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 

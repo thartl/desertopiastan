@@ -9,7 +9,7 @@
 			</header>
 			<main class="modal__content" id="modal-1-content">
 				<p>
-					You cannot unsee what lies beoynd this link.
+					You cannot unsee what lies beyond this link.
 				</p>
 			</main>
 			<footer class="modal__footer">
