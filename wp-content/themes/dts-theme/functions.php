@@ -419,9 +419,8 @@ function be_dps_template_part( $output, $original_atts ) {
 
 add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_link', 10, 3 );
 /**
- * Attaches "Spoiler" warning popup to post listings on the Guide page
- *
- * Also removes tags from the Index post title
+ * 1) Attaches "Spoiler" warning popup to post listings on the Guide page.
+ * 2) Removes tags from the Index post title.
  *
  * @param $output
  * @param $wrap
@@ -449,7 +448,8 @@ function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 	// Add class to trigger "Spoiler alert" modal
 	$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
 
-	// Bonus: also remove `a` tags from the "Index" post heading
+	// Bonus: also remove `a` tags from the "Intro" and "Index" post headings
+	// TODO: Base this on posts not having read-more content
 	if ( $post->ID == 1660 || $post->ID == 2060 ) {
 
 		$title = wp_strip_all_tags( $title );
