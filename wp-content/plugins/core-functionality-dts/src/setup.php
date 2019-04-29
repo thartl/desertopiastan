@@ -49,7 +49,11 @@ function enqueue_assets() {
 }
 
 
-// Print modal before </body>
+// Include post types and taxonomies
+require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
+
+
+// Print modal before `</body>`
 add_action( 'wp_footer', function() {
 
 	include DTS_CORE_FUNCTIONALITY_DIR . 'views/modal.php';

@@ -434,7 +434,7 @@ add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_l
 function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 
 	global $wp_query, $post;
-//d( $post->ID );
+
 	// Not on Guide page: Bail now
 	if ( $wp_query->query_vars['pagename'] != 'guide' ) {
 		return $output;
