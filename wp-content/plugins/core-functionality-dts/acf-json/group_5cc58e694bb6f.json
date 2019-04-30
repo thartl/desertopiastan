@@ -22,6 +22,25 @@
             "min": "",
             "max": "",
             "step": 1
+        },
+        {
+            "key": "field_5cc7fefd565a5",
+            "label": "te",
+            "name": "te",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -41,5 +60,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556609519
+    "modified": 1556610817
 }
