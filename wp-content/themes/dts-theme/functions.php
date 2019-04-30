@@ -499,3 +499,5 @@ function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
 }
 
+
+
