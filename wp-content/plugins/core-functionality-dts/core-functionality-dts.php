@@ -36,5 +36,5 @@ define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
 define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
 
 
-include __DIR__ . '/src/setup.php';
+require_once __DIR__ . '/src/setup.php';
 
