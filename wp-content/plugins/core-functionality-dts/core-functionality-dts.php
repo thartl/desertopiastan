@@ -28,13 +28,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'DTS_CORE_FUNCTIONALITY_PLUGIN', __FILE__ );
 define( 'DTS_CORE_FUNCTIONALITY_DIR', trailingslashit( __DIR__ ) );
+
 $plugin_url = plugin_dir_url( __FILE__ );
 if ( is_ssl() ) {
 	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
+
 define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
 define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
 
+// If ACF field groups are not updating automatically, increment this to force update on next push
+define( 'DTS_CORE_FUNCTIONALITY_VERSION', '1.0.0' );
+
 
 require_once __DIR__ . '/src/setup.php';
+
+require_once __DIR__ . '/src/acf.php';
 
