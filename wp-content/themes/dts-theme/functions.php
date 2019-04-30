@@ -475,3 +475,5 @@ function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 
 }
 
+
+
