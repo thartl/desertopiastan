@@ -366,12 +366,14 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 
 	global $wp_query;
 
-	if ( substr( strtolower( $more_link_text ), - 7 ) == 'spoiler' ) {
+	// Detect `spoiler` keyword in read-more link (site-wide)
+	if ( 'spoiler' == substr( strtolower( $more_link_text ), - 7 ) ) {
 
 		$maybe_alert_class = ' spoiler-alert';
 		$more_link_text    = substr( $more_link_text, 0, - 7 );
 
-	} elseif ( $wp_query->query_vars['pagename'] = 'guide' ) {
+		// All read-more links on the Guide page are spoiler alerts
+	} elseif ( 'guide' == $wp_query->query_vars['pagename'] ) {
 
 		$maybe_alert_class = ' spoiler-alert';
 
@@ -417,10 +419,13 @@ function be_dps_template_part( $output, $original_atts ) {
 }
 
 
-add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_link', 10, 3 );
+add_filter( 'genesis_post_title_output', 'heading_maybe_spoiler_maybe_unlink', 10, 3 );
 /**
- * 1) Attaches "Spoiler" warning popup to post listings on the Guide page.
- * 2) Removes tags from the Index post title.
+ * Modifies titles blog and archive pages:
+ *
+ * Attaches "Spoiler" warning to a listing's heading: if we're on the Guide page and listing contain a read-more tag, or
+ * site-wide if a read-more tag ends with `spoiler`
+ * Otherwise, removes <a> tags from the post title.
  *
  * @param $output
  * @param $wrap
@@ -430,12 +435,12 @@ add_filter( 'genesis_post_title_output', 'th_attach_spoiler_warning_to_heading_l
  * @since   1.0.0
  *
  */
-function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
+function heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
 	global $wp_query, $post;
 
-	// Not on Guide page: Bail now
-	if ( $wp_query->query_vars['pagename'] != 'guide' ) {
+	// Bail on single pages
+	if( is_single() ) {
 		return $output;
 	}
 
@@ -445,14 +450,33 @@ function th_attach_spoiler_warning_to_heading_link( $output, $wrap, $title ) {
 	}
 
 
-	// Add class to trigger "Spoiler alert" modal
-	$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
+	$has_readmore_link = preg_match( '/<!--more(.*?)?-->/', $post->post_content, $matches );
 
-	// Bonus: also remove `a` tags from the "Intro" and "Index" post headings
-	// TODO: Base this on posts not having read-more content
-	if ( $post->ID == 1660 || $post->ID == 2060 ) {
+	$contains_spoilers = '';
+	if ( isset( $matches[0] ) ) {
+		$contains_spoilers = substr( strtolower( $matches[0] ), - 10 ) == 'spoiler-->';
+	}
 
-		$title = wp_strip_all_tags( $title );
+	$on_Guide_page = $wp_query->query_vars['pagename'] == 'guide';
+
+
+	// Add spoiler alert
+	if ( $contains_spoilers || ( $on_Guide_page && $has_readmore_link ) ) {
+
+		// Add class to trigger "Spoiler alert" modal
+		$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
+
+	}
+
+	// Unlink heading on Guide page, when there is no additional content to go to
+	if ( $on_Guide_page && ! $has_readmore_link ) {
+
+		// Remove `a` tags from listings that have NO read-more content
+		if ( ! preg_match( '/<!--more(.*?)?-->/', $post->post_content ) ) {
+
+			$title = wp_strip_all_tags( $title );
+
+		}
 
 	}
 
