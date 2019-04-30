@@ -8,15 +8,15 @@
  * @license     GNU General Public License 2.0+
  */
 
-let spoiler_href;
-
 
 ( function( $ ) {  // No conflict implementation of JQuery in WordPress when enquequed in the footer
 
   $( document ).ready( function() {
 
 
-    // Attach alert to links that point to spoilers + save spoiler url to a global when clicked
+    let spoiler_href;
+
+    // Attach alert to links that point to spoilers + save spoiler url
     $( '.spoiler-alert' ).on( 'click', function( e ) {
 
       e.preventDefault();
