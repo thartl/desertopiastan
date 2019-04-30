@@ -447,7 +447,7 @@ a.more-link,
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
-	margin: 0 10px;
+	margin: 5px 10px;
 }
 a.button:first-of-type {
 	margin-left: 0;
@@ -1740,6 +1740,10 @@ p:empty {
 }
 td {
 	vertical-align: top;
+}
+.disclaimer {
+	color: #5EA8A4;
+	font-size: 22px;
 }
 
 
