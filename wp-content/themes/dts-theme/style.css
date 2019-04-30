@@ -451,6 +451,11 @@ a.more-link,
 }
 a.button:first-of-type {
 	margin-left: 0;
+	background-color: #57a857;
+}
+a.button:first-of-type:hover {
+	margin-left: 0;
+	background-color: #458745;
 }
 a.more-link.spoiler-alert,
 .modal__btn-primary {
@@ -882,6 +887,7 @@ img.alignright,
 	font-weight: 600;
 	margin: 0;
 	text-align: center;
+	//color: #28979f;
 }
 
 .entry-content p.wp-caption-text {
