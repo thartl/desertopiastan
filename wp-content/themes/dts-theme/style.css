@@ -432,8 +432,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button {
-	background-color: #323295;
+.button,
+a.more-link,
+.modal__btn-primary {
+	background-color: #5BA8A5;
 	border: 0;
 	border-radius: 3px;
 	color: #fff;
@@ -445,6 +447,19 @@ input[type="submit"],
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
+	margin: 0 10px;
+}
+a.button:first-of-type {
+	margin-left: 0;
+}
+a.more-link.spoiler-alert,
+.modal__btn-primary {
+	background-color: darkorange;
+	font-size: 16px;
+}
+a.more-link.spoiler-alert:hover,
+.modal__btn-primary:hover {
+	background-color: #d67600;
 }
 
 button:focus,

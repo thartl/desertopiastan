@@ -3,17 +3,17 @@
 		<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 			<header class="modal__header">
 				<h2 class="modal__title" id="modal-1-title">
-					Spoiler alert
+					<!-- Spoiler alert -->
 				</h2>
 				<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
 			</header>
 			<section class="modal__content" id="modal-1-content">
 				<p>
-					You cannot unsee what lies beyond this link.
+					This page contains Desertopia secrets
 				</p>
 			</section>
 			<footer class="modal__footer">
-				<button id="spoiler-continue" class="modal__btn modal__btn-primary">Continue at your own risk</button>
+				<button id="spoiler-continue" class="modal__btn modal__btn-primary">I want to know</button>
 			</footer>
 		</div>
 	</div>

@@ -322,7 +322,9 @@ span.bbp-author-ip {
 
 #bbpress-forums div.bbp-topic-content img,
 #bbpress-forums div.bbp-reply-content img {
-	max-width: 100%;
+	max-width: 80%;
+    display: block;
+    margin: 0 auto;
 }
 
 #bbpress-forums div.bbp-topic-content ul,
