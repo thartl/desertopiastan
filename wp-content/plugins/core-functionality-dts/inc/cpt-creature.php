@@ -68,19 +68,56 @@ class CPT_Creatures {
 		);
 
 		$args = array(
-			'labels'            => $labels,
-			'public'            => true,
-			'show_in_nav_menus' => true,
-			'show_ui'           => true,
-			'show_tagcloud'     => false,
-			'hierarchical'      => false,
-			'rewrite'           => array( 'slug' => 'creatures/elevations', 'with_front' => false ),
-			'query_var'         => true,
-			'show_admin_column' => false,
+			'labels'             => $labels,
+			'public'             => true,
+			'show_in_nav_menus'  => false,
+			'show_ui'            => true,
+			'show_in_quick_edit' => false,
+			'show_tagcloud'      => false,
+			'hierarchical'       => false,
+			'rewrite'            => array( 'slug' => 'creatures/elevations', 'with_front' => false ),
+			'query_var'          => true,
+			'show_admin_column'  => true,
 			// 'meta_box_cb'    => false,
 		);
 
 		register_taxonomy( 'elevation', array( 'creature' ), $args );
+
+
+		$labels = array(
+			'name'                       => 'Landforms',
+			'singular_name'              => 'Landform',
+			'search_items'               => 'Search Landforms',
+			'popular_items'              => 'Popular Landforms',
+			'all_items'                  => 'All Landforms',
+			'parent_item'                => 'Parent Landform',
+			'parent_item_colon'          => 'Parent Landform:',
+			'edit_item'                  => 'Edit Landform',
+			'update_item'                => 'Update Landform',
+			'add_new_item'               => 'Add New Landform',
+			'new_item_name'              => 'New Landform',
+			'separate_items_with_commas' => 'Separate Landforms with commas',
+			'add_or_remove_items'        => 'Add or remove Landforms',
+			'choose_from_most_used'      => 'Choose from most used Landforms',
+			'menu_name'                  => 'Landforms',
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'show_in_nav_menus'  => true,
+			'show_ui'            => true,
+			'show_in_quick_edit' => true,
+			'show_tagcloud'      => false,
+			'hierarchical'       => false,
+			'rewrite'            => array( 'slug' => 'creatures/landforms', 'with_front' => false ),
+			'query_var'          => true,
+			'show_admin_column'  => true,
+			// 'meta_box_cb'    => false,
+		);
+
+		register_taxonomy( 'landform', array( 'creature' ), $args );
+
 	}
 
 	/**
@@ -183,10 +220,12 @@ class CPT_Creatures {
 	function creature_columns( $columns ) {
 
 		$columns = array(
-			'cb'        => '<input type="checkbox" />',
-			'thumbnail' => 'Thumbnail',
-			'title'     => 'Name',
-			'date'      => 'Date',
+			'cb'              => '<input type="checkbox" />',
+			'title'           => 'Name',
+			'creature_number' => 'Creature number',
+			'elevations'      => 'Elevations',
+			'landforms'       => 'Landforms',
+			'date'            => 'Date',
 		);
 
 		return $columns;
@@ -203,12 +242,32 @@ class CPT_Creatures {
 	 */
 	function custom_columns( $column, $post_id ) {
 
-		global $post;
-
 		switch ( $column ) {
-			case 'thumbnail':
-				the_post_thumbnail( 'thumbnail' );
+			case 'creature_number' :
+
+				$creature_number = esc_html( get_post_meta( $post_id, 'creature_number', true ) );
+
+				echo $creature_number ?: '-';
+
 				break;
+
+			case 'elevations' :
+
+				$terms = get_the_term_list( $post_id, 'elevation', '', ', ', '' );
+				echo is_string( $terms ) ? $terms : '—';
+
+				break;
+
+			case 'landforms' :
+
+				$terms = get_the_term_list( $post_id, 'landform', '', ', ', '' );
+				echo is_string( $terms ) ? $terms : '—';
+
+				break;
+
+			default :
+				break;
+
 		}
 	}
 

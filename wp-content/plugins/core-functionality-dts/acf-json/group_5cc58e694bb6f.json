@@ -8,10 +8,10 @@
             "name": "creature_number",
             "type": "number",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -21,26 +21,7 @@
             "append": "",
             "min": "",
             "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5cc7d727a490e",
-            "label": "Suitable landforms",
-            "name": "suitable_landforms",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "step": 1
         }
     ],
     "location": [
@@ -60,5 +41,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556600228
+    "modified": 1556609519
 }
