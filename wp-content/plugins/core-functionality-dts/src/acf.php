@@ -60,7 +60,7 @@ class BE_ACF_Customizations {
 	 * Automatically sync any JSON field configuration.
 	 */
 	public function sync_fields_with_json() {
-		
+
 		if ( defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
 			return;
 		}
