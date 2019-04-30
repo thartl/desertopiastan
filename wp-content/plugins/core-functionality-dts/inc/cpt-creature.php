@@ -12,13 +12,13 @@
 namespace ParkdaleWire\DTS_Core;
 
 /**
- * Creatures custom post type + helpers
+ * Species custom post type + helpers
  *
  * Based on: https://github.com/billerickson/Core-Functionality/blob/master/inc/cpt-testimonial.php
  *
  * @since 2.0.0
  */
-class CPT_Creatures {
+class CPT_Species {
 
 	/**
 	 * Initialize all the things
@@ -31,15 +31,15 @@ class CPT_Creatures {
 		add_action( 'init', array( $this, 'register_tax' ) );
 		add_action( 'init', array( $this, 'register_cpt' ) );
 		add_action( 'gettext', array( $this, 'title_placeholder' ) );
-		add_action( 'pre_get_posts', array( $this, 'creature_query' ) );
-//		add_action( 'template_redirect', array( $this, 'redirect_single' ) );
+		add_action( 'pre_get_posts', array( $this, 'species_query' ) );
+		add_action( 'template_redirect', array( $this, 'redirect_single' ) );
 
 		// Column Filters
-		add_filter( 'manage_edit-creature_columns', array( $this, 'creature_columns' ) );
+		add_filter( 'manage_edit-species_columns', array( $this, 'species_columns' ) );
 
 		// Column Actions
-		add_action( 'manage_creature_pages_custom_column', array( $this, 'custom_columns' ), 10, 2 );
-		add_action( 'manage_creature_posts_custom_column', array( $this, 'custom_columns' ), 10, 2 );
+		add_action( 'manage_species_pages_custom_column', array( $this, 'custom_columns' ), 10, 2 );
+		add_action( 'manage_species_posts_custom_column', array( $this, 'custom_columns' ), 10, 2 );
 	}
 
 	/**
@@ -75,13 +75,13 @@ class CPT_Creatures {
 			'show_in_quick_edit' => false,
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
-			'rewrite'            => array( 'slug' => 'creatures/elevations', 'with_front' => false ),
+			'rewrite'            => array( 'slug' => 'species/elevations', 'with_front' => false ),
 			'query_var'          => true,
 			'show_admin_column'  => true,
 			// 'meta_box_cb'    => false,
 		);
 
-		register_taxonomy( 'elevation', array( 'creature' ), $args );
+		register_taxonomy( 'elevation', array( 'species' ), $args );
 
 
 		$labels = array(
@@ -110,13 +110,13 @@ class CPT_Creatures {
 			'show_in_quick_edit' => true,
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
-			'rewrite'            => array( 'slug' => 'creatures/landforms', 'with_front' => false ),
+			'rewrite'            => array( 'slug' => 'species/landforms', 'with_front' => false ),
 			'query_var'          => true,
 			'show_admin_column'  => true,
 			// 'meta_box_cb'    => false,
 		);
 
-		register_taxonomy( 'landform', array( 'creature' ), $args );
+		register_taxonomy( 'landform', array( 'species' ), $args );
 
 	}
 
@@ -128,18 +128,18 @@ class CPT_Creatures {
 	function register_cpt() {
 
 		$labels = array(
-			'name'               => 'Creatures',
-			'singular_name'      => 'Creature',
+			'name'               => 'Species',
+			'singular_name'      => 'Species',
 			'add_new'            => 'Add New',
-			'add_new_item'       => 'Add New Creature',
-			'edit_item'          => 'Edit Creature',
-			'new_item'           => 'New Creature',
-			'view_item'          => 'View Creature',
-			'search_items'       => 'Search Creatures',
-			'not_found'          => 'No Creatures found',
-			'not_found_in_trash' => 'No Creatures found in Trash',
-			'parent_item_colon'  => 'Parent Creature:',
-			'menu_name'          => 'Creatures',
+			'add_new_item'       => 'Add New Species',
+			'edit_item'          => 'Edit Species',
+			'new_item'           => 'New Species',
+			'view_item'          => 'View Species',
+			'search_items'       => 'Search Species',
+			'not_found'          => 'No Species found',
+			'not_found_in_trash' => 'No Species found in Trash',
+			'parent_item_colon'  => 'Parent Species:',
+			'menu_name'          => 'Species',
 		);
 
 		$args = array(
@@ -155,11 +155,11 @@ class CPT_Creatures {
 			'has_archive'         => true,
 			'query_var'           => true,
 			'can_export'          => true,
-			'rewrite'             => array( 'slug' => 'creatures', 'with_front' => false ),
+			'rewrite'             => array( 'slug' => 'species', 'with_front' => false ),
 			'menu_icon'           => 'dashicons-groups', // https://developer.wordpress.org/resource/dashicons/
 		);
 
-		register_post_type( 'creature', $args );
+		register_post_type( 'species', $args );
 
 	}
 
@@ -175,7 +175,7 @@ class CPT_Creatures {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'creature' == $post->post_type && 'Enter title here' == $translation ) {
+		if ( isset( $post ) && 'species' == $post->post_type && 'Enter title here' == $translation ) {
 			$translation = 'Enter Name Here';
 		}
 
@@ -184,32 +184,33 @@ class CPT_Creatures {
 	}
 
 	/**
-	 * Customize the Creatures Query
+	 * Customize the Species Query
 	 *
 	 * @param object $query
 	 *
 	 * @since 2.0.0
 	 */
-	function creature_query( $query ) {
-		if ( $query->is_main_query() && ! is_admin() && $query->is_post_type_archive( 'creature' ) ) {
+	function species_query( $query ) {
+		if ( $query->is_main_query() && ! is_admin() && $query->is_post_type_archive( 'species' ) ) {
 			$query->set( 'posts_per_page', 20 );
 		}
 	}
 
 	/**
-	 * Redirect Single Creatures
+	 * Redirect Single Species
 	 *
 	 * @since 2.0.0
 	 */
 	function redirect_single() {
-		if ( is_singular( 'creature' ) ) {
-			wp_redirect( get_post_type_archive_link( 'creature' ) );
+		if ( is_singular( 'species' ) ) {
+//			wp_redirect( get_post_type_archive_link( 'species' ) );
+			wp_redirect( home_url( '/field-guide/' ) );
 			exit;
 		}
 	}
 
 	/**
-	 * Creatures custom columns
+	 * Species custom columns
 	 *
 	 * @param array $columns
 	 *
@@ -217,15 +218,15 @@ class CPT_Creatures {
 	 * @since 2.0.0
 	 *
 	 */
-	function creature_columns( $columns ) {
+	function species_columns( $columns ) {
 
 		$columns = array(
-			'cb'              => '<input type="checkbox" />',
-			'title'           => 'Name',
-			'creature_number' => 'Creature number',
-			'elevations'      => 'Elevations',
-			'landforms'       => 'Landforms',
-			'date'            => 'Date',
+			'cb'             => '<input type="checkbox" />',
+			'title'          => 'Name',
+			'species_number' => 'Species number',
+			'elevations'     => 'Elevations',
+			'landforms'      => 'Landforms',
+			'date'           => 'Date',
 		);
 
 		return $columns;
@@ -243,11 +244,11 @@ class CPT_Creatures {
 	function custom_columns( $column, $post_id ) {
 
 		switch ( $column ) {
-			case 'creature_number' :
+			case 'species_number' :
 
-				$creature_number = esc_html( get_post_meta( $post_id, 'creature_number', true ) );
+				$species_number = esc_html( get_post_meta( $post_id, 'species_number', true ) );
 
-				echo $creature_number ?: '-';
+				echo $species_number ?: '-';
 
 				break;
 
@@ -273,4 +274,4 @@ class CPT_Creatures {
 
 }
 
-new CPT_Creatures();
+new CPT_Species();

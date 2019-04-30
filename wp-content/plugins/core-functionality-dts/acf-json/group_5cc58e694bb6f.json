@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5cc696f3b9698",
-            "label": "Creature number",
-            "name": "creature_number",
+            "label": "Species number",
+            "name": "species_number",
             "type": "number",
             "instructions": "",
             "required": 1,
@@ -29,7 +29,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "creature"
+                "value": "species"
             }
         ]
     ],
@@ -41,5 +41,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556610977
+    "modified": 1556613873
 }
