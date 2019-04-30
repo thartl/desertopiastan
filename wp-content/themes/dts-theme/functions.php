@@ -419,7 +419,7 @@ function be_dps_template_part( $output, $original_atts ) {
 }
 
 
-add_filter( 'genesis_post_title_output', 'heading_maybe_spoiler_maybe_unlink', 10, 3 );
+add_filter( 'genesis_post_title_output', 'adjust_heading_maybe_spoiler_maybe_unlink', 10, 3 );
 /**
  * Modifies titles blog and archive pages:
  *
@@ -435,7 +435,7 @@ add_filter( 'genesis_post_title_output', 'heading_maybe_spoiler_maybe_unlink', 1
  * @since   1.0.0
  *
  */
-function heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
+function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
 	global $wp_query, $post;
 
