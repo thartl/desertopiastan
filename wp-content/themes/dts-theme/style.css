@@ -457,6 +457,29 @@ a.button:first-of-type:hover {
 	margin-left: 0;
 	background-color: #458745;
 }
+.signup-button {
+	display: inline-block;
+}
+a.login {
+	display: inline-block;
+	background-color: #5BA8A5;
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	line-height: 22px;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	padding: 12px 18px;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+	margin: 5px 10px;
+}
+a.login:hover {
+	background-color: #28979f;
+}
 a.more-link.spoiler-alert,
 .modal__btn-primary {
 	background-color: darkorange;
