@@ -22,8 +22,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-//	wp_enqueue_style( 'dashicons' );
-
 	wp_enqueue_style(
 		'micromodal-styles',
 		DTS_CORE_FUNCTIONALITY_URL . 'assets/css/micromodal.css',
@@ -59,6 +57,22 @@ function enqueue_assets() {
 		'scroll-to-anchor',
 		DTS_CORE_FUNCTIONALITY_URL . 'assets/js/scroll-to-anchor.js',
 		array( 'jquery', 'pw-jump' ),
+		'1.0.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'imagesloaded-js',
+		DTS_CORE_FUNCTIONALITY_URL . 'assets/js/imagesloaded.pkgd.min.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'isotope-js',
+		DTS_CORE_FUNCTIONALITY_URL . 'assets/js/isotope.pkgd.min.js',
+		array( 'jquery', 'imagesloaded-js' ),
 		'1.0.0',
 		true
 	);
