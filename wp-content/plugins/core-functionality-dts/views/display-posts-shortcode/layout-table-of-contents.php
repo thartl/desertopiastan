@@ -11,6 +11,8 @@
 namespace ParkdaleWire\DTS_Core;
 
 
-echo '<li class="listing-item">';
-echo '<a class="title" href="' . get_anchor_url() . '">' . get_the_title() . '</a>';
-echo '</li>';
+?>
+
+<li class="listing-item">
+<a class="title" href="<?php print_anchor_url(); ?>"><?php echo get_the_title(); ?></a>
+</li>

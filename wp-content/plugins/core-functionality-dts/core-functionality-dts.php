@@ -10,7 +10,7 @@
  * Plugin Name: Desertopiastan Core Functionality
  * Plugin URI:  https://parkdalewire.com
  * Description: Core functionality plugin for Desertopiastan
- * Version:     1.0.0
+ * Version:     1.0.3
  * Author:      Tomas Hartl
  * Author URI:  https://parkdalewire.com
  * Text Domain: dts-core
