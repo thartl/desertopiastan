@@ -28,9 +28,13 @@ if ( ! function_exists( __NAMESPACE__ . '\display_filters_group' ) ) {
 
 		foreach ( $all_habitats as $habitat ) {
 
+		    $term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
+
+			$image_url = wp_get_attachment_image( $term_image_ID, 'full' ) ?: '';
+
 			printf( '<button class="button" data-filter=".habitat-%1$s">%2$s</button>',
 				$habitat->slug,
-				$habitat->name
+				$image_url
 			);
 
 		}
@@ -46,7 +50,6 @@ if ( ! function_exists( __NAMESPACE__ . '\display_filters_group' ) ) {
         </div>
 
 		<?php
-
 
 	}
 
