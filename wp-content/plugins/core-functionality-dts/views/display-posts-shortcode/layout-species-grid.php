@@ -99,7 +99,7 @@ if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 
 
 
-d( habitat_classes() );
+//d( habitat_classes() );
 
 
 ?>
