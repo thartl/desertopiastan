@@ -78,3 +78,18 @@ add_action( 'wp_footer', function() {
 }, 100 );
 
 
+// Filter login URL for "Genesis login modal box" plugin
+// Fix for mangled login URLs on blog and forum pages
+add_filter( 'wpstudio_add_login_filter', __NAMESPACE__ . '\set_login_modal_url_to_current_page' );
+function set_login_modal_url_to_current_page( $output ) {
+
+	global $wp;
+
+	$current_url = home_url( add_query_arg( array(), $wp->request ) );
+
+	$replacement = '<li class="menu-item login"><a href="' . $current_url . '/#login" title="Login">Login</a></li>';
+	
+	return $replacement;
+
+}
+
