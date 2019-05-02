@@ -577,6 +577,9 @@ td:first-child,
 th:first-child {
 	padding-left: 0;
 }
+.landforms td:first-child, th:first-child {
+    width: 50px;
+}
 
 /* ## Screen Reader Text
 --------------------------------------------- */
