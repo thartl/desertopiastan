@@ -40,7 +40,12 @@ class CPT_Species {
 		// Column Actions
 		add_action( 'manage_species_pages_custom_column', array( $this, 'custom_columns' ), 10, 2 );
 		add_action( 'manage_species_posts_custom_column', array( $this, 'custom_columns' ), 10, 2 );
+
+		// Sortable Columns
+		add_filter( 'manage_edit-species_sortable_columns', array( $this, 'species_sortable_columns' ) );
+
 	}
+
 
 	/**
 	 * Register the taxonomies
@@ -225,6 +230,7 @@ class CPT_Species {
 			'title'          => 'Name',
 			'species_number' => 'Species number',
 			'elevations'     => 'Elevations',
+			'food'           => 'Food',
 			'landforms'      => 'Landforms',
 			'date'           => 'Date',
 		);
@@ -259,6 +265,14 @@ class CPT_Species {
 
 				break;
 
+			case 'food' :
+
+				$food_number = esc_html( get_post_meta( $post_id, 'species_food', true ) );
+
+				echo $food_number ?: '-';
+
+				break;
+
 			case 'landforms' :
 
 				$terms = get_the_term_list( $post_id, 'landform', '', ', ', '' );
@@ -270,6 +284,15 @@ class CPT_Species {
 				break;
 
 		}
+	}
+
+
+	function species_sortable_columns( $columns ) {
+
+		$columns['species_number'] = 'species_number';
+
+		return $columns;
+
 	}
 
 }
