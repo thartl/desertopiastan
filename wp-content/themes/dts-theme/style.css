@@ -1743,7 +1743,7 @@ img.alignleft {
 	float: left;
 	border: 1px solid #fff;
 	border-radius: 50%;
-	margin: 0 20px 0 0;
+	margin: 0 20px 10px 0;
 }
 .button-group .button:focus,
 .button-group .button:active {
@@ -1795,8 +1795,8 @@ img.alignleft {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 50%;
-	width: 40px;
-	height: 35px;
+	width: 42px;
+	height: 36px;
 	text-align: center;
 }
 .species-item h3 {
@@ -1939,6 +1939,9 @@ td {
 .search-form-input {
 	padding: 8px 12px;
 	border-radius: 50px;
+}
+img {
+	border-radius: 10px;
 }
 
 
@@ -2127,7 +2130,7 @@ td {
 		float: left;
 	}
 	.title-area {
-		width: 300px;
+		//width: 300px;
 	}
 	.site-header .search-form {
 		float: right;

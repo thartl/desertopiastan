@@ -38,7 +38,7 @@ define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
 define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
 
 // Bump this version number to force ACF sync
-define( 'DTS_CORE_FUNCTIONALITY_VERSION', '1.0.2' );
+define( 'DTS_CORE_FUNCTIONALITY_VERSION', '1.0.3' );
 
 
 require_once __DIR__ . '/src/setup.php';
