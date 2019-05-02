@@ -37,7 +37,7 @@ if ( is_ssl() ) {
 define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
 define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
 
-// If ACF field groups are not updating automatically, increment this to force update on next push
+// If ACF field groups are not updating automatically, bump this to force update on next push
 define( 'DTS_CORE_FUNCTIONALITY_VERSION', '1.0.0' );
 
 
