@@ -590,6 +590,14 @@ th:first-child {
 	background: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png') no-repeat;
 	background-size: 35px;
 }
+.manuals td:nth-child(2) img {
+	width: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.widget ul.display-posts-listing > li {
+	padding-bottom: 0;
+}
 
 /* ## Screen Reader Text
 --------------------------------------------- */
@@ -1713,10 +1721,10 @@ img.alignleft {
 	left: 0px;
 	font-weight: 700;
 	padding: 4px;
-	background-color: rgba(246, 202, 196, 0.33);
+	background-color: #fff;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	border-radius: 4px;
+	border-radius: 50%;
 }
 .species-grid h3 {
 	text-align: center;
