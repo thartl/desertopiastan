@@ -8,6 +8,7 @@
  * @license      GPL-2.0+
  **/
 
+global $post;
 
 $post_listing_anchor = '/guide/#post-' . $post->post_name;
 

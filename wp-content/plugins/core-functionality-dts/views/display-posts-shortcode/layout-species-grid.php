@@ -1,6 +1,6 @@
 <?php
 /**
- * "Table of Contents" layout for Display Posts Shortcode
+ * "Species Grid" layout for Display Posts Shortcode
  *
  * @package
  * @author       Bill Erickson
@@ -35,7 +35,7 @@ if ( ! function_exists( __NAMESPACE__ . '\species_type_class' ) ) {
 
 	function species_type_class() {
 		global $post;
-		$type_class =  esc_html( get_post_meta( $post->ID, 'species_type', true ) );
+		$type_class = esc_html( get_post_meta( $post->ID, 'species_type', true ) );
 
 		echo $type_class ? ' species-' . strtolower( $type_class ) : '';
 
@@ -46,6 +46,11 @@ if ( ! function_exists( __NAMESPACE__ . '\species_type_class' ) ) {
 
 if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 
+	/**
+	 * Echoes range of elevations, or single elevation, or a dash for "no data".
+	 *
+	 * @echo false | array
+	 */
 	function species_elevations() {
 
 		global $post;

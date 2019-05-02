@@ -94,6 +94,37 @@ function set_login_modal_url_to_current_page( $output ) {
 }
 
 
+add_action( 'display_posts_shortcode_output', __NAMESPACE__ . '\be_dps_template_part', 10, 2 );
+/**
+ * Template Parts with Display Posts Shortcode
+ *
+ * @param string $output        , current output of post
+ * @param array  $original_atts , original attributes passed to shortcode
+ *
+ * @return string $output
+ * @see    https://www.billerickson.net/template-parts-with-display-posts-shortcode
+ *
+ * @author Bill Erickson
+ */
+function be_dps_template_part( $output, $original_atts ) {
+
+	// Return early if our "layout" attribute is not specified
+	if ( empty( $original_atts['layout'] ) ) {
+		return $output;
+	}
+
+	ob_start();
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/display-posts-shortcode/layout-' . $original_atts['layout'] . '.php';
+	$new_output = ob_get_clean();
+
+	if ( ! empty( $new_output ) ) {
+		$output = $new_output;
+	}
+
+	return $output;
+}
+
+
 add_shortcode( 'login_or_user_info', __NAMESPACE__ . '\login_or_user_info' );
 /**
  * Outputs either logged-in user information OR login and sign-up form
@@ -118,5 +149,21 @@ function login_or_user_info() {
 	return $output;
 
 }
+
+
+add_shortcode( 'species-grid', __NAMESPACE__ . '\species_grid' );
+/**
+ * Display Species Grid with Filters and Sorting
+ */
+function species_grid() {
+
+	ob_start();
+
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/species-grid.php';
+
+	return ob_get_clean();
+
+}
+
 
 
