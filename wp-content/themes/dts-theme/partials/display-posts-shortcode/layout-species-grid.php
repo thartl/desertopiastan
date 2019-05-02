@@ -11,56 +11,96 @@
 namespace ParkdaleWire\DesertopiaStan;
 
 
-$post_ID = $post->ID;
+if ( ! function_exists( __NAMESPACE__ . '\species_number' ) ) {
 
-$number = (int) get_post_meta( $post_ID, 'species_number', true );
-
-$food = get_post_meta( $post_ID, 'species_food', true ) ?: '';
-
-$elevations = get_the_terms( $post_ID, 'elevation' );
-
-// Assemble array of elevations
-$elevation_array = array();
-
-
-if ( $elevations ) {
-
-	foreach ( $elevations as $elevation ) {
-		$elevation_array[] = (int) $elevation->name;
+	function species_number() {
+		global $post;
+		echo (int) get_post_meta( $post->ID, 'species_number', true );
 	}
 
-	sort( $elevation_array );
+}
 
-	// Get lowest elevation
-	$lowest_elevation = $elevation_array[0] ?: false;
-	
-	// Get highest elevation
-	$highest_elevation = array_pop( $elevation_array );
-	$highest_elevation = $highest_elevation == 8 ? 7 : $highest_elevation;
 
-	$display_elevations = $lowest_elevation ?: '-';
+if ( ! function_exists( __NAMESPACE__ . '\species_food' ) ) {
 
-	if ( $highest_elevation > $lowest_elevation ) {
+	function species_food() {
+		global $post;
+		echo (int) get_post_meta( $post->ID, 'species_food', true ) ?: '-';
+	}
 
-		$display_elevations .= ' - ' . $highest_elevation;
+}
+
+
+if ( ! function_exists( __NAMESPACE__ . '\species_type_class' ) ) {
+
+	function species_type_class() {
+		global $post;
+		$type_class =  esc_html( get_post_meta( $post->ID, 'species_type', true ) );
+
+		echo $type_class ? ' species-' . strtolower( $type_class ) : '';
 
 	}
 
-} else {
+}
 
-	$display_elevations = '-';
+
+if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
+
+	function species_elevations() {
+
+		global $post;
+
+		$elevations = get_the_terms( $post->ID, 'elevation' );
+
+		// Assemble array of elevations
+		$elevation_array = array();
+
+
+		if ( $elevations ) {
+
+			foreach ( $elevations as $elevation ) {
+				$elevation_array[] = (int) $elevation->name;
+			}
+
+			sort( $elevation_array );
+
+			// Get lowest elevation
+			$lowest_elevation = $elevation_array[0] ?: false;
+			$lowest_elevation = $lowest_elevation == 8 ? 9 : $lowest_elevation;
+
+			// Get highest elevation
+			$highest_elevation = array_pop( $elevation_array );
+			$highest_elevation = $highest_elevation == 8 ? 7 : $highest_elevation;
+
+			$display_elevations = $lowest_elevation ?: '-';
+
+			if ( $highest_elevation > $lowest_elevation ) {
+
+				$display_elevations .= ' - ' . $highest_elevation;
+
+				echo $display_elevations;
+
+			}
+
+		} else {
+
+			echo '-';
+
+		}
+
+	}
 
 }
 
 
 ?>
 
-<div class="species-item clearfix">
+<div class="species-item clearfix<?php species_type_class() ?>">
     <div class="info clearfix">
         <div class="main-image"><?php the_post_thumbnail( 'thumbnail' ) ?></div>
-        <div class="number"># <?php echo $number; ?></div>
+        <div class="number">#<?php species_number() ?></div>
         <h3 class="title"><?php echo get_the_title(); ?></h3>
-        <p>Height: <span><?php echo $display_elevations; ?></span></p>
-        <p class="food">Food: <span><?php echo $food; ?></span></p>
+        <p>Height: <span><?php species_elevations() ?></span></p>
+        <p class="food">Food: <span><?php species_food() ?></span></p>
     </div>
 </div>
