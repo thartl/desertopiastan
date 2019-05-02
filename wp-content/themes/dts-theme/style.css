@@ -1081,7 +1081,7 @@ img.alignright,
 /* Display outline on focus */
 :focus {
 	color: #333;
-	outline: #ccc solid 1px;
+	outline: 0;
 }
 
 
@@ -1708,34 +1708,32 @@ img.alignleft {
 	display: inline-block;
 	padding: 10px 18px;
 	margin-bottom: 10px;
-	background: #EEE;
-	border: none;
-	border-radius: 7px;
-	background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-	color: #222;
+	background: none;
+    padding: 5px;
+	color: #fff;
 	font-size: 16px;
-	text-shadow: 0 1px white;
 	cursor: pointer;
+	line-height: 0;
+	margin-right: 20px;
 }
 
 .button:hover {
-	background-color: #8CF;
+	//background-color: #8CF;
 	text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
 	color: #222;
 }
 
 .button:active,
 .button.is-checked {
-	background-color: #28F;
 }
 
 .button.is-checked {
-	color: white;
-	text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+	color: #dddddd;
 }
 
 .button:active {
-	box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+	border: 1px solid #28979f;
+	border-radius: 50%;
 }
 
 /* ---- button-group ---- */
@@ -1748,13 +1746,28 @@ img.alignleft {
 
 .button-group .button {
 	float: left;
-	border-radius: 0;
-	margin-left: 0;
-	margin-right: 1px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	margin: 0 20px 0 0;
+}
+.button-group .button:focus {
+	//border: 3px solid #28979f;
 }
 
-.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+.button-group .button:first-child {
+	background-color: #89C7C8;
+	line-height: 2;
+	border-radius: 10px;
+	margin-top: 7px;
+	margin-bottom: 50px;
+}
+.button-group:nth-of-type(2) {
+	margin-bottom: 30px;
+}
+.button-group .button img {
+	width: 45px;
+	height: 45px;
+}
 
 /*********************** END: Filters and Sorting **/
 
@@ -1802,12 +1815,13 @@ img.alignleft {
 	line-height: 1.3;
 	text-align: center;
 	margin: 0 0 0px;
+	color: #000;
 }
 .species-item p span {
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: #632f06;
+	color: #000;
 }
 .species-item .title {
 	margin-top: 12px;
@@ -1916,7 +1930,7 @@ td {
 	border-radius: 50%;
 }
 .species-regular img {
-	border: 4px solid cornflowerblue;
+	//border: 4px solid cornflowerblue;
 	border-radius: 50%;
 }
 #search-3 {
