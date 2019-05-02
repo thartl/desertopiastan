@@ -24,7 +24,7 @@ class BE_ACF_Customizations {
 		// Save and sync fields in functionality plugin
 		add_filter( 'acf/settings/save_json', array( $this, 'get_local_json_path' ) );
 		add_filter( 'acf/settings/load_json', array( $this, 'add_local_json_path' ) );
-		add_action( 'admin_init', array( $this, 'sync_fields_with_json' ) );
+//		add_action( 'admin_init', array( $this, 'sync_fields_with_json' ) );
 
 		// Register options page
 		//add_action( 'init', array( $this, __NAMESPACE__ . '\register_options_page' ) );
