@@ -71,7 +71,7 @@ require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
 
 
 // Print modal before `</body>`
-add_action( 'wp_footer', function() {
+add_action( 'wp_footer', function () {
 
 	include DTS_CORE_FUNCTIONALITY_DIR . 'views/modal.php';
 
@@ -88,13 +88,13 @@ function set_login_modal_url_to_current_page( $output ) {
 	$current_url = home_url( add_query_arg( array(), $wp->request ) );
 
 	$replacement = '<li class="menu-item login"><a href="' . $current_url . '/#login" title="Login">Login</a></li>';
-	
+
 	return $replacement;
 
 }
 
 
-add_action( 'display_posts_shortcode_output', __NAMESPACE__ . '\be_dps_template_part', 10, 2 );
+add_action( 'display_posts_shortcode_output', __NAMESPACE__ . '\use_templates_for_display_posts_shortcode', 10, 2 );
 /**
  * Template Parts with Display Posts Shortcode
  *
@@ -106,7 +106,7 @@ add_action( 'display_posts_shortcode_output', __NAMESPACE__ . '\be_dps_template_
  *
  * @author Bill Erickson
  */
-function be_dps_template_part( $output, $original_atts ) {
+function use_templates_for_display_posts_shortcode( $output, $original_atts ) {
 
 	// Return early if our "layout" attribute is not specified
 	if ( empty( $original_atts['layout'] ) ) {
@@ -162,6 +162,42 @@ function species_grid() {
 	include DTS_CORE_FUNCTIONALITY_DIR . 'views/species-grid.php';
 
 	return ob_get_clean();
+
+}
+
+
+/**
+ * Returns array of arrays (habitats), each with a slug and a name of the `landform` taxonomy.
+ *
+ * @return false | array
+ */
+function habitat_classes() {
+
+	global $post;
+
+	$habitats = get_the_terms( $post->ID, 'landform' );
+
+
+	// Assemble array of habitats
+	$habitats_array = array();
+
+	if ( $habitats ) {
+
+//		$habitat_count = 0;
+		foreach ( $habitats as $habitat ) {
+			$habitats_array[] = $habitat->slug;
+//			$habitats_array[ $habitat_count ]['name'] = $habitat->name;
+//			$habitat_count ++;
+		}
+//		d( $habitats_array );
+
+		return $habitats_array;
+
+	} else {
+
+		return false;
+
+	}
 
 }
 

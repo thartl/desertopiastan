@@ -8,7 +8,7 @@
  * @license      GPL-2.0+
  **/
 
-namespace ParkdaleWire\DesertopiaStan;
+namespace ParkdaleWire\DTS_Core;
 
 
 if ( ! function_exists( __NAMESPACE__ . '\species_number' ) ) {
@@ -96,6 +96,10 @@ if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 	}
 
 }
+
+
+
+d( habitat_classes() );
 
 
 ?>

@@ -12,46 +12,6 @@
 namespace ParkdaleWire\DTS_Core;
 
 
-if ( ! function_exists( __NAMESPACE__ . '\get_habitats_array' ) ) {
-
-	/**
-	 * Returns array of arrays (habitats), each with a slug and a name of the `landform` taxonomy.
-	 *
-	 * @return false | array
-	 */
-	function get_habitats_array() {
-
-		global $post;
-
-		$habitats = get_the_terms( $post->ID, 'landform' );
-
-
-		// Assemble array of habitats
-		$habitats_array = array();
-
-		if ( $habitats ) {
-
-			$habitat_count = 0;
-			foreach ( $habitats as $habitat ) {
-				$habitats_array[ $habitat_count ][ 'slug' ] = $habitat->slug;
-				$habitats_array[ $habitat_count ][ 'name' ] = $habitat->name;
-				$habitat_count ++;
-			}
-			d( $habitats_array );
-
-			return $habitats_array;
-
-		} else {
-
-			return false;
-
-		}
-
-	}
-
-}
-
-
 if ( ! function_exists( __NAMESPACE__ . '\display_filters_group' ) ) {
 
 	function display_filters_group() {
