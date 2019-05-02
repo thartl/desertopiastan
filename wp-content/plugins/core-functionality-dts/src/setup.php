@@ -96,7 +96,7 @@ function set_login_modal_url_to_current_page( $output ) {
 
 add_shortcode( 'login_or_user_info', __NAMESPACE__ . '\login_or_user_info' );
 /**
- * Outputs either logged-in user information OR login and signup form
+ * Outputs either logged-in user information OR login and sign-up form
  */
 function login_or_user_info() {
 
@@ -118,6 +118,5 @@ function login_or_user_info() {
 	return $output;
 
 }
-
 
 

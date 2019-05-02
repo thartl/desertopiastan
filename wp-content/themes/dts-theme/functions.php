@@ -500,3 +500,9 @@ function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 }
 
 
+//* Remove the edit link
+add_filter ( 'genesis_edit_post_link' , '__return_false' );
+
+
+
+
