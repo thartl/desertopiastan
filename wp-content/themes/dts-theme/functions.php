@@ -426,7 +426,7 @@ function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 	global $wp_query, $post;
 
 	// Bail on single pages
-	if( is_single() ) {
+	if ( is_single() ) {
 		return $output;
 	}
 
@@ -487,7 +487,7 @@ function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
 
 //* Remove the edit link
-add_filter ( 'genesis_edit_post_link' , '__return_false' );
+add_filter( 'genesis_edit_post_link', '__return_false' );
 
 
 
