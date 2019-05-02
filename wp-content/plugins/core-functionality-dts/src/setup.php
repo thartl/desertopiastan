@@ -83,6 +83,8 @@ function enqueue_assets() {
 // Include post types and taxonomies
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
 
+require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/loop-helpers.php';
+
 
 // Print modal before `</body>`
 add_action( 'wp_footer', function () {
@@ -178,38 +180,5 @@ function species_grid() {
 	return ob_get_clean();
 
 }
-
-
-/**
- * Returns array of arrays (habitats), each with a slug and a name of the `landform` taxonomy.
- *
- * @echo string
- */
-function habitat_classes() {
-
-	global $post;
-	$habitats = get_the_terms( $post->ID, 'landform' );
-
-	// Assemble array of habitats
-	$habitats_array = array();
-
-	if ( $habitats ) {
-
-		foreach ( $habitats as $habitat ) {
-			$habitats_array[] = 'habitat-' . $habitat->slug;
-		}
-
-		$habitat_classes = implode( ' ', $habitats_array );
-
-		echo ' ' . $habitat_classes;
-
-	} else {
-
-		echo '';
-
-	}
-
-}
-
 
 
