@@ -12,6 +12,7 @@
     ],
     "menu_order": 0,
     "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -19,6 +20,7 @@
     "active": 1,
     "description": "",
     "modified": 1556821700,
+    "modified": 1556822192,
     "fields": [
         {
             "key": "field_5ccb2ec938440",
