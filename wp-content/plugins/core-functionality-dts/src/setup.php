@@ -173,7 +173,7 @@ function species_grid() {
 
 	ob_start();
 
-	include DTS_CORE_FUNCTIONALITY_DIR . 'views/species-grid.php';
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/all-species-filtered-grid.php';
 
 	return ob_get_clean();
 
