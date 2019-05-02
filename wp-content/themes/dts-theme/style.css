@@ -1710,7 +1710,7 @@ img.alignleft {
 	margin-bottom: 10px;
 	background: none;
     padding: 5px;
-	color: #222;
+	color: #fff;
 	font-size: 16px;
 	cursor: pointer;
 	line-height: 0;
@@ -1718,7 +1718,7 @@ img.alignleft {
 }
 
 .button:hover {
-	background-color: #8CF;
+	//background-color: #8CF;
 	text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
 	color: #222;
 }
@@ -1728,11 +1728,11 @@ img.alignleft {
 }
 
 .button.is-checked {
-	color: white;
+	color: #dddddd;
 }
 
 .button:active {
-	border: 2px solid #28979f;
+	border: 1px solid #28979f;
 	border-radius: 50%;
 }
 
@@ -1748,13 +1748,26 @@ img.alignleft {
 	float: left;
 	border: 3px solid #fff;
 	border-radius: 50%;
+	margin: 0 20px 0 0;
 }
 .button-group .button:focus {
-	border: 3px solid #28979f;
+	//border: 3px solid #28979f;
 }
 
-.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+.button-group .button:first-child {
+	background-color: #89C7C8;
+	line-height: 2;
+	border-radius: 10px;
+	margin-top: 7px;
+	margin-bottom: 50px;
+}
+.button-group:nth-of-type(2) {
+	margin-bottom: 30px;
+}
+.button-group .button img {
+	width: 45px;
+	height: 45px;
+}
 
 /*********************** END: Filters and Sorting **/
 
@@ -1802,12 +1815,13 @@ img.alignleft {
 	line-height: 1.3;
 	text-align: center;
 	margin: 0 0 0px;
+	color: #000;
 }
 .species-item p span {
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 700;
-	color: #632f06;
+	color: #000;
 }
 .species-item .title {
 	margin-top: 12px;
@@ -1916,7 +1930,7 @@ td {
 	border-radius: 50%;
 }
 .species-regular img {
-	border: 4px solid cornflowerblue;
+	//border: 4px solid cornflowerblue;
 	border-radius: 50%;
 }
 #search-3 {
@@ -1930,13 +1944,7 @@ td {
 	padding: 8px 12px;
 	border-radius: 50px;
 }
-.button-group .button {
-	background: none;
-}
-.button-group img {
-	width: 50px;
-	height: 50px;
-}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
