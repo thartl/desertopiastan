@@ -53,13 +53,13 @@ function enqueue_assets() {
 		true
 	);
 
-	wp_enqueue_script(
-		'scroll-to-anchor',
-		DTS_CORE_FUNCTIONALITY_URL . 'assets/js/scroll-to-anchor.js',
-		array( 'jquery', 'pw-jump' ),
-		'1.0.0',
-		true
-	);
+	// wp_enqueue_script(
+	// 	'scroll-to-anchor',
+	// 	DTS_CORE_FUNCTIONALITY_URL . 'assets/js/scroll-to-anchor.js',
+	// 	array( 'jquery', 'pw-jump' ),
+	// 	'1.0.0',
+	// 	true
+	// );
 
 	wp_enqueue_script(
 		'imagesloaded-js',

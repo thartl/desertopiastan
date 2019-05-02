@@ -81,7 +81,7 @@ if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 
 			if ( $highest_elevation > $lowest_elevation ) {
 
-				$display_elevations .= ' - ' . $highest_elevation;
+				$display_elevations .= '-' . $highest_elevation;
 
 				echo $display_elevations;
 
@@ -104,7 +104,7 @@ if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 habitat_classes() ?>">
     <div class="info clearfix">
         <div class="main-image"><?php the_post_thumbnail( 'thumbnail' ) ?></div>
-        <div class="number">#<?php species_number() ?></div>
+        <div class="number"><?php species_number() ?></div>
         <h3 class="title"><?php echo get_the_title() ?></h3>
         <p>Height: <span class="elevation"><?php species_elevations() ?></span></p>
         <p class="food">Food: <span><?php species_food() ?></span></p>
