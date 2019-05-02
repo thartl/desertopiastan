@@ -17,26 +17,35 @@ if ( ! function_exists( __NAMESPACE__ . '\display_filters_group' ) ) {
 	function display_filters_group() {
 
 		$all_habitats = get_terms( array(
-			'taxonomy' => 'landform',
+			'taxonomy'   => 'landform',
 			'hide_empty' => true,
 		) );
 
-//		d( $all_habitats );
 
-        echo '<div class="button-group filters-button-group">';
+		echo '<div class="button-group filters-button-group">';
+
 		echo '<button class="button is-checked" data-filter="*">show all</button>';
 
 		foreach ( $all_habitats as $habitat ) {
 
-            printf('<button class="button" data-filter=".habitat-%1$s">%2$s</button>',
-                $habitat->slug,
-                $habitat->name
-                );
+			printf( '<button class="button" data-filter=".habitat-%1$s">%2$s</button>',
+				$habitat->slug,
+				$habitat->name
+			);
 
-        }
+		}
 
-        echo '</div>';
+		echo '</div>';
 
+		?>
+
+        <div class="button-group sort-by-button-group">
+            <button class="button is-checked" data-sort-value="original-order">Number</button>
+            <button class="button" data-sort-value="name">Name</button>
+            <button class="button" data-sort-value="elevation">Height</button>
+        </div>
+
+		<?php
 
 
 	}
