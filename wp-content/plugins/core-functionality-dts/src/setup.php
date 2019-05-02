@@ -93,3 +93,34 @@ function set_login_modal_url_to_current_page( $output ) {
 
 }
 
+
+add_shortcode( 'login_or_user_info', __NAMESPACE__ . '\login_or_user_info' );
+/**
+ * Outputs either logged-in user information OR login and signup form
+ */
+function login_or_user_info() {
+
+	global $current_user;
+
+	$current_user_name = $current_user->display_name;
+
+	$current_user_name = $current_user_name ?: '';
+
+	$logout_link = '<a href="' . wp_logout_url( home_url( '/forums/' ) ) . '">Logout</a>';
+
+	if ( $current_user_name ) {
+
+		return '<p>You are logged in as <span>' . $current_user_name . '</span>.&nbsp;&nbsp;' . $logout_link . '?</p>';
+
+	}
+
+	$output = '<p class="signup-button"><a class="button" href="http://desertopiastan.local/register">Sign Up</a></p>';
+
+	$output .= do_shortcode( '[wps_login]Log in[/wps_login]' );
+
+	return $output;
+
+}
+
+
+
