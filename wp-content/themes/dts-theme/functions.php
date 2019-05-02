@@ -65,6 +65,23 @@ function pw_base_enqueue_scripts_styles() {
 		'genesis_responsive_menu',
 		pw_base_responsive_menu_settings()
 	);
+
+	wp_enqueue_script(
+		'isotope-js',
+		get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'global-js',
+		get_stylesheet_directory_uri() . '/js/global.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
+	);
+
 }
 
 // Define our responsive menu settings.
@@ -385,37 +402,6 @@ function th_customize_read_more( $read_more_link, $more_link_text ) {
 
 	return ' <a href="' . get_permalink() . '" class="more-link' . $maybe_alert_class . '">' . $more_link_text . '</a>';
 
-}
-
-
-add_action( 'display_posts_shortcode_output', 'be_dps_template_part', 10, 2 );
-/**
- * Template Parts with Display Posts Shortcode
- *
- * @param string $output        , current output of post
- * @param array  $original_atts , original attributes passed to shortcode
- *
- * @return string $output
- * @see    https://www.billerickson.net/template-parts-with-display-posts-shortcode
- *
- * @author Bill Erickson
- */
-function be_dps_template_part( $output, $original_atts ) {
-
-	// Return early if our "layout" attribute is not specified
-	if ( empty( $original_atts['layout'] ) ) {
-		return $output;
-	}
-
-	ob_start();
-	get_template_part( 'partials/display-posts-shortcode/layout', $original_atts['layout'] );
-	$new_output = ob_get_clean();
-
-	if ( ! empty( $new_output ) ) {
-		$output = $new_output;
-	}
-
-	return $output;
 }
 
 

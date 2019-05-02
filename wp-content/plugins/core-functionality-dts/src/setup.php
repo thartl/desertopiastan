@@ -71,7 +71,7 @@ require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
 
 
 // Print modal before `</body>`
-add_action( 'wp_footer', function() {
+add_action( 'wp_footer', function () {
 
 	include DTS_CORE_FUNCTIONALITY_DIR . 'views/modal.php';
 
@@ -88,9 +88,40 @@ function set_login_modal_url_to_current_page( $output ) {
 	$current_url = home_url( add_query_arg( array(), $wp->request ) );
 
 	$replacement = '<li class="menu-item login"><a href="' . $current_url . '/#login" title="Login">Login</a></li>';
-	
+
 	return $replacement;
 
+}
+
+
+add_action( 'display_posts_shortcode_output', __NAMESPACE__ . '\use_templates_for_display_posts_shortcode', 10, 2 );
+/**
+ * Template Parts with Display Posts Shortcode
+ *
+ * @param string $output        , current output of post
+ * @param array  $original_atts , original attributes passed to shortcode
+ *
+ * @return string $output
+ * @see    https://www.billerickson.net/template-parts-with-display-posts-shortcode
+ *
+ * @author Bill Erickson
+ */
+function use_templates_for_display_posts_shortcode( $output, $original_atts ) {
+
+	// Return early if our "layout" attribute is not specified
+	if ( empty( $original_atts['layout'] ) ) {
+		return $output;
+	}
+
+	ob_start();
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/display-posts-shortcode/layout-' . $original_atts['layout'] . '.php';
+	$new_output = ob_get_clean();
+
+	if ( ! empty( $new_output ) ) {
+		$output = $new_output;
+	}
+
+	return $output;
 }
 
 
@@ -118,5 +149,57 @@ function login_or_user_info() {
 	return $output;
 
 }
+
+
+add_shortcode( 'species-grid', __NAMESPACE__ . '\species_grid' );
+/**
+ * Display Species Grid with Filters and Sorting
+ */
+function species_grid() {
+
+	ob_start();
+
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/species-grid.php';
+
+	return ob_get_clean();
+
+}
+
+
+/**
+ * Returns array of arrays (habitats), each with a slug and a name of the `landform` taxonomy.
+ *
+ * @return false | array
+ */
+function habitat_classes() {
+
+	global $post;
+
+	$habitats = get_the_terms( $post->ID, 'landform' );
+
+
+	// Assemble array of habitats
+	$habitats_array = array();
+
+	if ( $habitats ) {
+
+//		$habitat_count = 0;
+		foreach ( $habitats as $habitat ) {
+			$habitats_array[] = $habitat->slug;
+//			$habitats_array[ $habitat_count ]['name'] = $habitat->name;
+//			$habitat_count ++;
+		}
+//		d( $habitats_array );
+
+		return $habitats_array;
+
+	} else {
+
+		return false;
+
+	}
+
+}
+
 
 

@@ -228,7 +228,8 @@ class CPT_Species {
 		$columns = array(
 			'cb'             => '<input type="checkbox" />',
 			'title'          => 'Name',
-			'species_number' => 'Species number',
+			'species_number' => 'Number',
+			'species_type'   => 'Type',
 			'elevations'     => 'Elevations',
 			'food'           => 'Food',
 			'landforms'      => 'Landforms',
@@ -255,6 +256,14 @@ class CPT_Species {
 				$species_number = esc_html( get_post_meta( $post_id, 'species_number', true ) );
 
 				echo $species_number ?: '-';
+
+				break;
+
+			case 'species_type' :
+
+				$species_type = esc_html( get_post_meta( $post_id, 'species_type', true ) );
+
+				echo $species_type ?: '-';
 
 				break;
 
