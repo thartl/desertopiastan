@@ -60,7 +60,7 @@ if ( $elevations ) {
         <div class="main-image"><?php the_post_thumbnail( 'thumbnail' ) ?></div>
         <div class="number"># <?php echo $number; ?></div>
         <h3 class="title"><?php echo get_the_title(); ?></h3>
+        <p>Height: <span><?php echo $display_elevations; ?></span></p>
         <p class="food">Food: <span><?php echo $food; ?></span></p>
-        <p>Elevations: <span><?php echo $display_elevations; ?></span></p>
     </div>
 </div>
