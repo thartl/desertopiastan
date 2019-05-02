@@ -1,0 +1,4 @@
+#adminmenu .menu-icon-species a,
+#adminmenu .menu-icon-species a .wp-menu-image:before {
+	color: #da6b03;
+}

@@ -80,10 +80,34 @@ function enqueue_assets() {
 }
 
 
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\load_admin_styles' );
+/**
+ * Enqueue admin styles.
+ *
+ * @return void
+ * @since   1.0.0
+ *
+ */
+function load_admin_styles() {
+
+	wp_enqueue_style(
+		'dts-admin-style',
+		DTS_CORE_FUNCTIONALITY_URL . 'assets/css/admin-style.css',
+		array(),
+		'1.0.0'
+	);
+
+}
+
+
 // Include post types and taxonomies
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
 
+// Helpers, mostly for inside loops, mostly for Species CPT loops
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/loop-helpers.php';
+
+// Spoiler Alert helpers + Guide page post navigation helpers
+require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/spoiler-alerts.php';
 
 
 // Print modal before `</body>`
