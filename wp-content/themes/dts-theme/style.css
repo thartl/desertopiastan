@@ -1081,7 +1081,7 @@ img.alignright,
 /* Display outline on focus */
 :focus {
 	color: #333;
-	outline: #ccc solid 1px;
+	outline: 0;
 }
 
 
@@ -1708,14 +1708,13 @@ img.alignleft {
 	display: inline-block;
 	padding: 10px 18px;
 	margin-bottom: 10px;
-	background: #EEE;
-	border: none;
-	border-radius: 7px;
-	background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+	background: none;
+    padding: 5px;
 	color: #222;
 	font-size: 16px;
-	text-shadow: 0 1px white;
 	cursor: pointer;
+	line-height: 0;
+	margin-right: 20px;
 }
 
 .button:hover {
@@ -1726,16 +1725,15 @@ img.alignleft {
 
 .button:active,
 .button.is-checked {
-	background-color: #28F;
 }
 
 .button.is-checked {
 	color: white;
-	text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
 }
 
 .button:active {
-	box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+	border: 2px solid #28979f;
+	border-radius: 50%;
 }
 
 /* ---- button-group ---- */
@@ -1748,9 +1746,11 @@ img.alignleft {
 
 .button-group .button {
 	float: left;
-	border-radius: 0;
-	margin-left: 0;
-	margin-right: 1px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+}
+.button-group .button:focus {
+	border: 3px solid #28979f;
 }
 
 .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
@@ -1930,7 +1930,13 @@ td {
 	padding: 8px 12px;
 	border-radius: 50px;
 }
-
+.button-group .button {
+	background: none;
+}
+.button-group img {
+	width: 50px;
+	height: 50px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
