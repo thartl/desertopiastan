@@ -580,6 +580,11 @@ th:first-child {
 .landforms td:first-child, th:first-child {
     width: 50px;
 }
+.special-icon::before {
+	content: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png');
+	width: 50px;
+	display: block;
+}
 
 /* ## Screen Reader Text
 --------------------------------------------- */
