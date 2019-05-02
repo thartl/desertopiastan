@@ -169,33 +169,29 @@ function species_grid() {
 /**
  * Returns array of arrays (habitats), each with a slug and a name of the `landform` taxonomy.
  *
- * @return false | array
+ * @echo string
  */
 function habitat_classes() {
 
 	global $post;
-
 	$habitats = get_the_terms( $post->ID, 'landform' );
-
 
 	// Assemble array of habitats
 	$habitats_array = array();
 
 	if ( $habitats ) {
 
-//		$habitat_count = 0;
 		foreach ( $habitats as $habitat ) {
-			$habitats_array[] = $habitat->slug;
-//			$habitats_array[ $habitat_count ]['name'] = $habitat->name;
-//			$habitat_count ++;
+			$habitats_array[] = 'habitat-' . $habitat->slug;
 		}
-//		d( $habitats_array );
 
-		return $habitats_array;
+		$habitat_classes = implode( ' ', $habitats_array );
+
+		echo ' ' . $habitat_classes;
 
 	} else {
 
-		return false;
+		echo '';
 
 	}
 

@@ -99,12 +99,12 @@ if ( ! function_exists( __NAMESPACE__ . '\species_elevations' ) ) {
 
 
 
-//d( habitat_classes() );
+
 
 
 ?>
 
-<div class="species-item clearfix<?php species_type_class() ?>">
+<div class="species-item clearfix<?php species_type_class(); habitat_classes() ?>">
     <div class="info clearfix">
         <div class="main-image"><?php the_post_thumbnail( 'thumbnail' ) ?></div>
         <div class="number">#<?php species_number() ?></div>

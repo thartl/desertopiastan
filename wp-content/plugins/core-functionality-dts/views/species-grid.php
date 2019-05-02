@@ -16,19 +16,27 @@ if ( ! function_exists( __NAMESPACE__ . '\display_filters_group' ) ) {
 
 	function display_filters_group() {
 
+		$all_habitats = get_terms( array(
+			'taxonomy' => 'landform',
+			'hide_empty' => true,
+		) );
 
-		?>
+//		d( $all_habitats );
 
-        <div class="button-group filters-button-group">
-            <button class="button is-checked" data-filter="*">show all</button>
-            <button class="button" data-filter=".habitat-beach">Beach</button>
-            <button class="button" data-filter=".transition">transition</button>
-            <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
-            <button class="button" data-filter=":not(.transition)">not transition</button>
-            <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
-        </div>
+        echo '<div class="button-group filters-button-group">';
+		echo '<button class="button is-checked" data-filter="*">show all</button>';
 
-		<?php
+		foreach ( $all_habitats as $habitat ) {
+
+            printf('<button class="button" data-filter=".habitat-%1$s">%2$s</button>',
+                $habitat->slug,
+                $habitat->name
+                );
+
+        }
+
+        echo '</div>';
+
 
 
 	}
