@@ -22,7 +22,7 @@
       e.preventDefault();
 
       spoiler_href = $( this ).attr( 'href' );
-
+console.log( spoiler_href );
       MicroModal.show( 'spoiler-alert' );
 
     } );
