@@ -22,27 +22,33 @@
 	border-radius: 4px;
 	overflow-y: auto;
 	box-sizing: border-box;
+	background-image: url('http://desertopiastan.local/wp-content/uploads/2019/05/wavy-dots.png');
 }
 
 .modal__header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 }
 
 .modal__title {
 	margin-top: 0;
 	margin-bottom: 0;
 	font-weight: 600;
-	font-size: 1.25rem;
-	line-height: 1.25;
-	color: #00449e;
+	font-size: 28px;
+	line-height: 1.5;
+	font-family: 'Comfortaa';
+	color: #2F979E;
 	box-sizing: border-box;
+	padding-top: 5px;
 }
 
 .modal__close {
-	background: transparent;
+	background: #2F979E;
 	border: 0;
+	padding: 6px 9px;
+	margin-top: 0;
 }
 
 .modal__header .modal__close:before { content: "\2715"; }
@@ -51,7 +57,9 @@
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	line-height: 1.5;
-	color: rgba(0,0,0,.8);
+	font-family: 'Comfortaa';
+	color: #2F979E;
+	font-weight: 700;
 }
 
 .modal__btn {
@@ -84,9 +92,11 @@
 	transform: scale(1.05);
 }
 
-.modal__btn-primary {
-	background-color: #a13c0b;
+button.modal__btn-primary {
 	color: #fff;
+	margin-left: 0;
+	/* margin: 0 auto;
+	display: block; */
 }
 
 

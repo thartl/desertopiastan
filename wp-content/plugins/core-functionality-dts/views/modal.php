@@ -3,13 +3,13 @@
 		<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 			<header class="modal__header">
 				<h2 class="modal__title" id="modal-1-title">
-					<!-- Spoiler alert -->
+					Are you sure?
 				</h2>
 				<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
 			</header>
 			<section class="modal__content" id="modal-1-content">
 				<p>
-					This page contains Desertopia secrets
+					This page contains Desertopia secrets!
 				</p>
 			</section>
 			<footer class="modal__footer">
