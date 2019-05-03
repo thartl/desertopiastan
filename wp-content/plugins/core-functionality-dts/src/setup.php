@@ -103,7 +103,7 @@ function load_admin_styles() {
 // Include post types and taxonomies
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
 
-// Helpers, mostly for inside loops, mostly for Species CPT loops
+// Helpers, mostly for inside loops, mostly for Species CPT
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/loop-helpers.php';
 
 // Spoiler Alert helpers + Guide page post navigation helpers

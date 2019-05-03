@@ -3,7 +3,7 @@
  *
  * @package
  * @since       1.0.0
- * @author      hartl
+ * @author      thartl
  * @link        https://parkdalewire.com
  * @license     GNU General Public License 2.0+
  */
@@ -54,7 +54,7 @@
           getSortData: {
             name: '.title',
             elevation: '.elevation',
-          },
+          }
         } );
 
     // layout Isotope after each image loads

@@ -489,6 +489,26 @@ a.more-link.spoiler-alert:hover,
 .modal__btn-primary:hover {
 	background-color: #d67600;
 }
+.display-posts-listing .spoiler-link {
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding-left: 18px;
+}
+.display-posts-listing .spoiler-link a {
+	background-color: #d67600;
+	border: 0;
+	border-radius: 7px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding: 2px 7px;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+	margin: 5px 9px;
+}
 
 button:focus,
 button:hover,
