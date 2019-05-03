@@ -47,6 +47,24 @@ function species_food() {
 
 
 /**
+ * Get URL for the iteration of the current heading, which points to the post listing on the Guide page
+ *
+ * @return  string  Escaped URL
+ *
+ */
+function get_anchor_url() {
+
+	global $post;
+
+	$post_listing_anchor = '/guide/#post-' . $post->post_name;
+
+	return esc_url( home_url( $post_listing_anchor ) );
+
+}
+
+
+
+/**
  * Displays range of elevations, or single elevation, or a dash for "no data".
  *
  * Works only within a Species loop.
@@ -166,7 +184,7 @@ function display_filter_sort_button_groups() {
 
 	echo '<div class="button-group filters-button-group">';
 
-	echo '<button class="button default is-checked" data-filter="*">show all</button>';
+	echo '<button class="button default is-checked" data-filter="*">All</button>';
 
 	foreach ( $all_habitats as $habitat ) {
 
@@ -185,11 +203,11 @@ function display_filter_sort_button_groups() {
 
 	?>
 
-    <div class="button-group sort-by-button-group">
+    <!-- <div class="button-group sort-by-button-group">
         <button class="button is-checked" data-sort-value="original-order">Number</button>
         <button class="button" data-sort-value="name">Name</button>
         <button class="button" data-sort-value="elevation">Height</button>
-    </div>
+    </div> -->
 
 	<?php
 

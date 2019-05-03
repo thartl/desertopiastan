@@ -3,18 +3,14 @@
  * "Table of Contents" layout for Display Posts Shortcode
  *
  * @package
- * @author       Bill Erickson
+ * @author       Tomas Hartl
  * @since        1.0.0
  * @license      GPL-2.0+
  **/
 
-global $post;
-
-$post_listing_anchor = '/guide/#post-' . $post->post_name;
-
-$url = esc_url( home_url( $post_listing_anchor ) );
+namespace ParkdaleWire\DTS_Core;
 
 
 echo '<li class="listing-item">';
-echo '<a class="title" href="' . $url . '">' . get_the_title() . '</a>';
+echo '<a class="title" href="' . get_anchor_url() . '">' . get_the_title() . '</a>';
 echo '</li>';
