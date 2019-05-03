@@ -11,8 +11,22 @@
 namespace ParkdaleWire\DTS_Core;
 
 
-?>
+echo '<li class="listing-item">';
 
-<li class="listing-item">
-<a class="title" href="<?php print_anchor_url(); ?>"><?php echo get_the_title(); ?></a>
-</li>
+
+printf( '<a class="title" href="%1$s">%2$s</a>',
+	get_anchor_url(),
+	get_the_title()
+);
+
+
+if ( needs_spoiler_alert() ) {
+
+    printf( '<p class="spoiler-link spoiler-alert">Full content: <a href="%s">Spoilers</a></p>',
+	    get_permalink()
+    );
+
+}
+
+
+echo '</li>';

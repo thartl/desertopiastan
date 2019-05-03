@@ -47,18 +47,18 @@ function species_food() {
 
 
 /**
- * Display URL for the iteration of the current heading, which points to the post listing on the Guide page
+ * Get URL for the iteration of the current heading, which points to the post listing on the Guide page
  *
- * @echo  string  Escaped URL
+ * @return  string  Escaped URL
  *
  */
-function print_anchor_url() {
+function get_anchor_url() {
 
 	global $post;
 
 	$post_listing_anchor = '/guide/#post-' . $post->post_name;
 
-	echo esc_url( home_url( $post_listing_anchor ) );
+	return esc_url( home_url( $post_listing_anchor ) );
 
 }
 

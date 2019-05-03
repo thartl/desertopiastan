@@ -94,6 +94,18 @@ function is_Guide_Page() {
 }
 
 
+/**
+ * Do we need to display a spoiler alert?
+ *
+ * @return bool
+ *
+ */
+function needs_spoiler_alert() {
+
+	return has_spoilers() || ( is_Guide_Page() && maybe_get_readmore_tag() );
+
+}
+
 
 
 add_filter( 'the_content_more_link', __NAMESPACE__ . '\th_customize_read_more', 10, 2 );
@@ -153,7 +165,7 @@ add_filter( 'genesis_post_title_output', __NAMESPACE__ . '\adjust_heading_maybe_
  */
 function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
-	global $wp_query, $post;
+	global $post;
 
 	// Bail on single pages
 	if ( is_single() ) {
@@ -167,7 +179,7 @@ function adjust_heading_maybe_spoiler_maybe_unlink( $output, $wrap, $title ) {
 
 
 	// Add spoiler alert
-	if ( has_spoilers() || ( is_Guide_Page() && maybe_get_readmore_tag() ) ) {
+	if ( needs_spoiler_alert() ) {
 
 		// Add class to trigger "Spoiler alert" modal on click
 		$title = substr_replace( $title, 'spoiler-alert ', 10, 0 );
