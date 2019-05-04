@@ -59,3 +59,28 @@ function assign_id_to_new_table( $post_id, $post, $update ) {
 }
 
 
+add_shortcode( 'tablestan', __NAMESPACE__ . '\tabelstan' );
+/**
+ * Display table
+ */
+function tabelstan( $atts ) {
+
+	$a = shortcode_atts( array(
+		'id' => '',
+	), $atts );
+
+	if ( ! $a['id'] ) {
+		return;
+	}
+
+	$table_id = abs( (int) $a['id'] );
+
+	ob_start();
+
+	include DTS_CORE_FUNCTIONALITY_DIR . 'views/tablestan-layout.php';
+
+	return ob_get_clean();
+
+}
+
+

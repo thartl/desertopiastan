@@ -3,11 +3,27 @@
     "title": "Create a table",
     "fields": [
         {
-            "key": "field_5ccd0cfd329d7",
-            "label": "Test field",
-            "name": "test_field",
-            "type": "text",
+            "key": "field_5ccd2f346b40d",
+            "label": "Table",
+            "name": "dts_table_content",
+            "type": "table",
             "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "use_header": 0,
+            "use_caption": 1
+        },
+        {
+            "key": "field_5ccd38c2986ba",
+            "label": "Custom class",
+            "name": "dts_table_class",
+            "type": "text",
+            "instructions": "Attaches to the table element.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,5 +55,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556942095
+    "modified": 1556956904
 }
