@@ -1980,7 +1980,7 @@ td {
 	padding: 8px 12px;
 	border-radius: 50px;
 }
-img {
+img:not(.site-header img) {
 	border-radius: 10px;
 }
 p.spoiler-link {
