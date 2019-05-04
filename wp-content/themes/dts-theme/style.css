@@ -1994,7 +1994,7 @@ p.spoiler-link {
 	margin-bottom: 30px;
 }
 nav#genesis-nav-primary {
-    background-image: url(http://desertopiastan.local/wp-content/uploads/2019/05/wavy-dots.png);
+    background-image: url('/wp-content/uploads/2019/05/wavy-dots.png');
 }
 .regular-habitats img {
 	width: 50px;
