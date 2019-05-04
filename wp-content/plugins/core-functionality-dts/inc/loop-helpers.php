@@ -208,9 +208,9 @@ function display_habitat_icons( $type ) {
 		$habitat_type = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
 
         if ( $habitat_type ) {
-            $habitat_class = array( 'class' => 'hab-' . $habitat_type . ' size-thumbnail' );
+            $habitat_class = array( 'class' => 'hab-' . $habitat_type . ' attachment-thumbnail size-thumbnail' );
         } else {
-	        $habitat_class = array( 'class' => 'hab-na size-thumbnail' );
+	        $habitat_class = array( 'class' => 'hab-na attachment-thumbnail size-thumbnail' );
         }
 
 
