@@ -2136,7 +2136,7 @@ nav#genesis-nav-primary {
 		width: 300px;
 		position: -webkit-sticky;
 		position: sticky;
-		top: 40px;
+		//top: 40px;
 	}
 	.blog .sidebar-primary {
 		margin-top: 50px;
