@@ -1996,6 +1996,11 @@ p.spoiler-link {
 nav#genesis-nav-primary {
     background-image: url(http://desertopiastan.local/wp-content/uploads/2019/05/wavy-dots.png);
 }
+.regular-habitats img {
+	width: 50px;
+	display: block;
+	margin: 0 auto;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
