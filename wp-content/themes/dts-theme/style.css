@@ -1744,7 +1744,7 @@ img.alignleft {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-	background-color: #28979f;
+	//background-color: #28979f;
 	padding: 20px 20px 10px 20px;
 	border-radius: 10px;
 }
@@ -1773,7 +1773,7 @@ img.alignleft {
 .button-group .button {
 	float: left;
 	border-radius: 50%;
-	border: 3px solid #28979f;
+	border: 3px solid #fff;
 }
 .button-group .button:active,
 .button-group .button:focus {
@@ -1796,6 +1796,10 @@ img.alignleft {
 .button-group .button img {
 	width: 45px;
 	height: 45px;
+}
+.button[data-filter=".habitat-oasis-7"] img {
+	width: 70px;
+	height: 62px;
 }
 
 
