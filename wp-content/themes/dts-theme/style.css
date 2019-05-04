@@ -619,6 +619,8 @@ th:first-child {
 }
 .widget ul.display-posts-listing > li {
 	padding-bottom: 0;
+	margin-bottom: 5px;
+
 }
 
 /* ## Screen Reader Text
