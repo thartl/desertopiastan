@@ -202,7 +202,29 @@ function species_grid() {
 
 	ob_start();
 
-	include DTS_CORE_FUNCTIONALITY_DIR . 'views/all-species-filtered-grid.php';
+	display_filter_sort_button_groups();
+
+	display_species_grid();
+
+	return ob_get_clean();
+
+}
+
+
+
+add_shortcode( 'species-icon-list', __NAMESPACE__ . '\species_icon_list' );
+/**
+ * Display a list of habitat icons, maybe filtered by habitat type
+ */
+function species_icon_list( $atts ) {
+
+	$a = shortcode_atts( array(
+		'type' => 'all',
+	), $atts );
+
+	ob_start();
+
+	display_habitat_icons( $a['type'] );
 
 	return ob_get_clean();
 

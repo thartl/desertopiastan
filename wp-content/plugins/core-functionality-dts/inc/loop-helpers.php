@@ -63,7 +63,6 @@ function get_anchor_url() {
 }
 
 
-
 /**
  * Displays range of elevations, or single elevation, or a dash for "no data".
  *
@@ -168,9 +167,65 @@ function habitat_classes() {
 
 
 /**
- * Displays Filter and Sorting buttons for the Species Grid
+ * Displays habitats icons
  *
- * Works only within a Species loop.
+ * @echo string     (HTML) Two button groups: Filter, Sort
+ */
+function display_habitat_icons( $type ) {
+
+	switch ( strtolower( $type ) ) {
+
+		case 'regular' :
+
+			$meta_query_array = array( 'key' => 'habitat_type', 'value' => 'regular' );
+
+			break;
+
+		case 'special' :
+
+			$meta_query_array = array( 'key' => 'habitat_type', 'value' => 'special' );
+
+			break;
+
+		default:
+
+			$meta_query_array = array();
+
+			break;
+
+	}
+
+	$all_habitats = get_terms( array(
+		'taxonomy'   => 'landform',
+		'hide_empty' => true,
+		'meta_query' => array( $meta_query_array )
+	) );
+
+	foreach ( $all_habitats as $habitat ) {
+
+		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
+
+		$habitat_type = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
+
+        if ( $habitat_type ) {
+            $habitat_class = array( 'class' => 'hab-' . $habitat_type . ' size-thumbnail' );
+        } else {
+	        $habitat_class = array( 'class' => 'hab-na size-thumbnail' );
+        }
+
+
+		$image_url = wp_get_attachment_image( $term_image_ID, 'thumbnail', false, $habitat_class )
+            ?: '';
+
+		echo $image_url;
+
+	}
+
+}
+
+
+/**
+ * Displays Filter and Sorting buttons for the Species Grid
  *
  * @echo string     (HTML) Two button groups: Filter, Sort
  */
@@ -188,11 +243,11 @@ function display_filter_sort_button_groups() {
 
 	foreach ( $all_habitats as $habitat ) {
 
-        $term_type = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
-        $term_type_class = $term_type ? ' habitat-' . strtolower( $term_type ) : '';
+		$term_type       = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
+		$term_type_class = $term_type ? ' habitat-' . strtolower( $term_type ) : '';
 
 		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
-		$image_url = wp_get_attachment_image( $term_image_ID, 'thumbnail' ) ?: '';
+		$image_url     = wp_get_attachment_image( $term_image_ID, 'thumbnail' ) ?: '';
 
 		printf( '<button class="button%1$s" data-filter=".habitat-%2$s">%3$s</button>',
 			$term_type_class,
