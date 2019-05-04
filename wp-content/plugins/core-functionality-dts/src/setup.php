@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Set up constants, include files, and enqueue resources.
  *
  * @package     ParkdaleWire\DTS_Core
  * @since       1.0.0
@@ -102,6 +102,7 @@ function load_admin_styles() {
 
 // Include post types and taxonomies
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-creature.php';
+require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/cpt-table.php';
 
 // Helpers, mostly for inside loops, mostly for Species CPT
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/loop-helpers.php';
@@ -109,6 +110,8 @@ require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/loop-helpers.php';
 // Spoiler Alert helpers + Guide page post navigation helpers
 require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/spoiler-alerts.php';
 
+// CPT Tables: helpers and layout
+require_once DTS_CORE_FUNCTIONALITY_DIR . 'inc/tables.php';
 
 // Print modal before `</body>`
 add_action( 'wp_footer', function () {

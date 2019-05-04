@@ -3,6 +3,28 @@
     "title": "Habitat extras",
     "fields": [
         {
+            "key": "field_5ccd298848168",
+            "label": "Type",
+            "name": "habitat_type",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Regular": "Regular",
+                "Special": "Special"
+            },
+            "allow_null": 0,
+            "default_value": "Regular",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5ccb2ec938440",
             "label": "Image",
             "name": "habitat_image",
@@ -44,5 +66,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556827482
+    "modified": 1556949705
 }

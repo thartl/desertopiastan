@@ -2,3 +2,8 @@
 #adminmenu .menu-icon-species a .wp-menu-image:before {
 	color: #da6b03;
 }
+
+#adminmenu .menu-icon-table a,
+#adminmenu .menu-icon-table a .wp-menu-image:before {
+	color: #439738;
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Custom post type Creature
  *
  * @package     ParkdaleWire\DTS_Core
  * @since       1.0.0
@@ -90,21 +90,21 @@ class CPT_Species {
 
 
 		$labels = array(
-			'name'                       => 'Landforms',
-			'singular_name'              => 'Landform',
-			'search_items'               => 'Search Landforms',
-			'popular_items'              => 'Popular Landforms',
-			'all_items'                  => 'All Landforms',
-			'parent_item'                => 'Parent Landform',
-			'parent_item_colon'          => 'Parent Landform:',
-			'edit_item'                  => 'Edit Landform',
-			'update_item'                => 'Update Landform',
-			'add_new_item'               => 'Add New Landform',
-			'new_item_name'              => 'New Landform',
-			'separate_items_with_commas' => 'Separate Landforms with commas',
-			'add_or_remove_items'        => 'Add or remove Landforms',
-			'choose_from_most_used'      => 'Choose from most used Landforms',
-			'menu_name'                  => 'Landforms',
+			'name'                       => 'Habitats',
+			'singular_name'              => 'Habitat',
+			'search_items'               => 'Search Habitats',
+			'popular_items'              => 'Popular Habitats',
+			'all_items'                  => 'All Habitats',
+			'parent_item'                => 'Parent Habitat',
+			'parent_item_colon'          => 'Parent Habitat:',
+			'edit_item'                  => 'Edit Habitat',
+			'update_item'                => 'Update Habitat',
+			'add_new_item'               => 'Add New Habitat',
+			'new_item_name'              => 'New Habitat',
+			'separate_items_with_commas' => 'Separate Habitats with commas',
+			'add_or_remove_items'        => 'Add or remove Habitats',
+			'choose_from_most_used'      => 'Choose from most used Habitats',
+			'menu_name'                  => 'Habitats',
 		);
 
 		$args = array(
@@ -161,7 +161,7 @@ class CPT_Species {
 			'query_var'           => true,
 			'can_export'          => true,
 			'rewrite'             => array( 'slug' => 'species', 'with_front' => false ),
-			'menu_icon'           => 'dashicons-groups', // https://developer.wordpress.org/resource/dashicons/
+			'menu_icon'           => 'dashicons-admin-site', // https://developer.wordpress.org/resource/dashicons/
 		);
 
 		register_post_type( 'species', $args );
@@ -232,7 +232,7 @@ class CPT_Species {
 			'species_type'   => 'Type',
 			'elevations'     => 'Elevations',
 			'food'           => 'Food',
-			'landforms'      => 'Landforms',
+			'landforms'      => 'Habitats',
 			'date'           => 'Date',
 		);
 
