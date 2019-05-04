@@ -1906,7 +1906,7 @@ h2.hero-text {
 .single-post h1.entry-title {
     margin-bottom: 30px;
 }
-.blog h1.archive-title {
+.posts-page-description {
     display: none;
 }
 #post-cruise-ship tr > td:first-of-type {
@@ -2149,7 +2149,7 @@ nav#genesis-nav-primary {
 		top: 0;
 	}
 	.blog .sidebar-primary {
-		margin-top: 50px;
+		//margin-top: 50px;
 	}
 
 	.sidebar-secondary {
