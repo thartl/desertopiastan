@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Custom post type Creature
  *
  * @package     ParkdaleWire\DTS_Core
  * @since       1.0.0
