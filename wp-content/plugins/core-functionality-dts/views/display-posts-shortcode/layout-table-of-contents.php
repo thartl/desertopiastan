@@ -22,7 +22,7 @@ printf( '<a class="title" href="%1$s">%2$s</a>',
 
 if ( needs_spoiler_alert() ) {
 
-    printf( '<p class="spoiler-link spoiler-alert">Full content: <a href="%s">Spoilers</a></p>',
+    printf( '<p class="spoiler-link">Full content: <a href="%s" class="spoiler-alert">Spoilers</a></p>',
 	    get_permalink()
     );
 
