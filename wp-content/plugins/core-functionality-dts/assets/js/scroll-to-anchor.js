@@ -30,8 +30,8 @@
         }, 1 );
 
         scrollToAnchor( anchor, 720 );
-console.log( 'External request smooth scroll fired' );
-console.log( anchor );
+
+
       }
 
     }
@@ -39,7 +39,7 @@ console.log( anchor );
 
     // Smooth-scroll on click to anchor on the same page
     $( 'a[href*="#"]:not([href="#"]):not([href^="#tab"]):not([href*="#login"])' ).click( function( e ) {
-console.log( 'Smooth scroll fired' );
+
       if ( location.pathname.replace( /^\//, '' ) == this.pathname.replace( /^\//, '' )
           && location.hostname == this.hostname ) {
 

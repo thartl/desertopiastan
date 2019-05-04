@@ -7,3 +7,8 @@
 #adminmenu .menu-icon-table a .wp-menu-image:before {
 	color: #439738;
 }
+
+.acf-table-header-cont,
+.acf-table-body-cont {
+	white-space: pre-line;
+}
