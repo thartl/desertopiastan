@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Loops helpers
  *
  * @package     ParkdaleWire\DTS_Core
  * @since       1.0.0
@@ -188,11 +188,14 @@ function display_filter_sort_button_groups() {
 
 	foreach ( $all_habitats as $habitat ) {
 
-		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
+        $term_type = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
+        $term_type_class = $term_type ? ' habitat-' . strtolower( $term_type ) : '';
 
+		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
 		$image_url = wp_get_attachment_image( $term_image_ID, 'thumbnail' ) ?: '';
 
-		printf( '<button class="button" data-filter=".habitat-%1$s">%2$s</button>',
+		printf( '<button class="button%1$s" data-filter=".habitat-%2$s">%3$s</button>',
+			$term_type_class,
 			$habitat->slug,
 			$image_url
 		);

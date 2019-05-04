@@ -28,7 +28,7 @@ class CPT_Table {
 	function __construct() {
 
 		// Actions
-		add_action( 'init', array( $this, 'register_tax' ) );
+//		add_action( 'init', array( $this, 'register_tax' ) );
 		add_action( 'init', array( $this, 'register_cpt' ) );
 		add_action( 'gettext', array( $this, 'title_placeholder' ) );
 		add_action( 'pre_get_posts', array( $this, 'table_query' ) );
@@ -66,7 +66,7 @@ class CPT_Table {
 			'not_found'          => 'No Table found',
 			'not_found_in_trash' => 'No Table found in Trash',
 			'parent_item_colon'  => 'Parent Table:',
-			'menu_name'          => 'Table',
+			'menu_name'          => 'Tables',
 		);
 
 		$args = array(
@@ -83,7 +83,7 @@ class CPT_Table {
 			'query_var'           => true,
 			'can_export'          => true,
 			'rewrite'             => array( 'slug' => 'table', 'with_front' => false ),
-			'menu_icon'           => 'dashicons-groups', // https://developer.wordpress.org/resource/dashicons/
+			'menu_icon'           => 'dashicons-editor-table', // https://developer.wordpress.org/resource/dashicons/
 		);
 
 		register_post_type( 'table', $args );
@@ -148,10 +148,11 @@ class CPT_Table {
 	function table_columns( $columns ) {
 
 		$columns = array(
-			'cb'           => '<input type="checkbox" />',
-			'title'        => 'Name',
-			'table_id'     => 'Table ID',
-			'date'         => 'Date',
+			'cb'        => '<input type="checkbox" />',
+			'title'     => 'Name',
+			'table_id'  => 'Table ID',
+			'shortcode' => 'Shortcode',
+			'date'      => 'Date',
 		);
 
 		return $columns;
@@ -174,6 +175,14 @@ class CPT_Table {
 				$table_number = esc_html( get_post_meta( $post_id, 'table_id', true ) );
 
 				echo $table_number ?: '-';
+
+				break;
+
+			case 'shortcode' :
+
+				$table_number = esc_html( get_post_meta( $post_id, 'table_id', true ) );
+
+				echo $table_number ? '[tablestan id="' . $table_number . '"]' : '';
 
 				break;
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Helpers for spoiler alerts
  *
  * @package     ParkdaleWire\DTS_Core
  * @since       1.0.0
