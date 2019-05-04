@@ -276,7 +276,7 @@ h2 {
 	font-size: 3rem;
 }
 h2, h2.entry-title {
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 }
 
 h3 {
@@ -926,7 +926,7 @@ a.alignright {
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 24px;
+	margin: 0 auto 40px;
 }
 
 img.alignnone,
