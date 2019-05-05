@@ -71,7 +71,7 @@ if ( ! empty ( $table ) ) {
 		foreach ( $tr as $td ) {
 
 			echo '<td>';
-			echo nl2br( $td['c'] );
+			echo filter_responsive_image_output( nl2br( $td['c'] ) );
 			echo '</td>';
 		}
 
