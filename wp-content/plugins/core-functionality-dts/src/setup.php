@@ -186,7 +186,7 @@ function login_or_user_info() {
 
 	}
 
-	$output = '<p class="signup-button"><a class="button" href="http://desertopiastan.local/register">Sign Up</a></p>';
+	$output = '<p class="signup-button"><a class="button" href="' . esc_html( home_url( '/register' ) ) . '">Sign Up</a></p>';
 	$output .= do_shortcode( '[wps_login]Log in[/wps_login]' );
 
 	return $output;
@@ -229,4 +229,11 @@ function species_icon_list( $atts ) {
 
 }
 
+
+// Add class to paragraphs with 30+ characters of text outside of tags
+//add_filter( 'the_content', 'mark_paragraphs_with_text_content' );
+function mark_paragraphs_with_text_content() {
+
+
+}
 
