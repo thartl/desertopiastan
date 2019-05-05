@@ -617,6 +617,12 @@ th:first-child {
 	display: block;
 	margin: 0 auto;
 }
+.manuals td > img {
+	border: 2px solid #888;
+	border-radius: 50%;
+	margin-right: 20px;
+	margin-bottom: 0;
+}
 .widget ul.display-posts-listing > li {
 	padding-bottom: 0;
 	margin-bottom: 5px;
@@ -931,7 +937,7 @@ a.alignright {
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 40px;
+	margin: 0 auto;
 }
 
 img.alignnone,
@@ -1784,11 +1790,10 @@ img.alignleft {
 	color: #fff;
 	font-size: 16px;
 	display: inline-block;
-	padding: 10px 18px;
 }
 .button-group .button:active,
 .button-group .button:focus {
-	border: 3px solid #fff;
+	border: 3px solid #8AC7C8;
 }
 .button-group .button:hover {
 	border: 3px solid #8AC7C8;
@@ -1808,26 +1813,30 @@ img.alignleft {
 	width: 45px;
 	height: 45px;
 }
-.button[data-filter=".habitat-oasis-7"] img {
-	width: 70px;
-	height: 62px;
+
+/* .button.habitat-special {
+	padding: 0;
+	border: 0;
 }
+.button.habitat-special:hover {
+	padding: 0;
+	border: 0;
+} */
 
 
 /*********************** END: Filters and Sorting **/
 
 
 .species-grid {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
+	margin-top: 30px;
+	clear: left;
 }
 .species-item {
-	flex: 0 1 250px;
-	//float: left;
+	float: left;
 	position: relative;
 	margin: 10px 0 30px;
-	width: 160px;
+	width: 50%;
+	height: 198px;
 }
 .species-item img {
 	width: 100px;
@@ -1876,6 +1885,20 @@ img.alignleft {
 .species-item .food {
 
 }
+.filters-button-group,
+	.filter-habitat {
+		display: none;
+}
+.postid-1508 h2 {
+	display: block;
+	clear: left;
+	margin-top: 60px;
+}
+.field-guide-structure img {
+	width: calc(100% - 40px);
+	margin: 0 20px 20px;
+}
+
 
 
 /* Home page styles
@@ -2047,7 +2070,26 @@ a.more-link.spoiler-alert {
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
+@media only screen and (min-width: 451px) {
+	.species-item {
+		width: 33.3333%;
+	}
 
+}
+@media only screen and (min-width: 601px) {
+	.species-item {
+		width: 25%;
+	}
+	.field-guide-structure img {
+		width: calc(50% - 40px);
+	}
+}
+@media only screen and (min-width: 801px) {
+	.filters-button-group,
+	.filter-habitat {
+		display: block;
+	}
+}
 
 @media only screen and (min-width: 861px) {
 
@@ -2158,6 +2200,9 @@ a.more-link.spoiler-alert {
 	.first {
 		margin-left: 0;
 		clear: both;
+	}
+	.species-item {
+		width: 20%;
 	}
 }
 
@@ -2341,6 +2386,14 @@ a.more-link.spoiler-alert {
 	.genesis-nav-menu .menu-item:hover {
 		position: static;
 	}  */
+
+	.species-item {
+		width: 25%;
+	}
+	.filters-button-group,
+	.filter-habitat {
+		display: none;
+	}
 	
 }
 
@@ -2377,6 +2430,13 @@ a.more-link.spoiler-alert {
 
 	.footer-widgets-1 {
 		margin-right: 60px;
+	}
+	.species-item {
+		width: 20%;
+	}
+	.filters-button-group,
+	.filter-habitat {
+		display: block;
 	}
 
 }

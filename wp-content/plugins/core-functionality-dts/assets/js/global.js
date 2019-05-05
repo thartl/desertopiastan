@@ -51,6 +51,12 @@
         // init Isotope
     var $grid = $( '.species-grid' ).isotope( {
           itemSelector: '.species-item',
+          layoutMode: 'masonry',
+          percentPosition: true,
+          masonry: {
+            // use element for option
+            columnWidth: '.species-item'
+          },
           getSortData: {
             name: '.title',
             elevation: '.elevation',
