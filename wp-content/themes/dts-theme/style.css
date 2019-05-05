@@ -1883,12 +1883,14 @@ table {
 table figcaption {
 	line-height: 1.2;
 }
-#post-work-ship .recycling-trades tr > td:nth-of-type(3) img {
+.recycling-trades tr > td:nth-of-type(3) img {
 	width: 50px;
-	display: block;
-	margin: 0 auto;
-	/* border-radius: 50%;
-	border: 2px solid #888; */
+	//display: block;
+	margin: 10px
+}
+.recycling-trades tr > td:nth-of-type(2) {
+	width: 100px;
+	margin: 10px
 }
 #post-work-ship .recycling-trades img {
 	border-radius: 50%;
@@ -2001,7 +2003,8 @@ a.more-link.spoiler-alert {
     margin: 5px auto;
 }
 .special-habitats-spoiler th,
-.special-items th {
+.special-items th,
+.recycling-trades th {
 	text-align: left;
 	font-weight: 700;
 	font-size: 2rem;
