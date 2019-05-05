@@ -1706,18 +1706,11 @@ p.entry-meta {
 	padding: 10px 20px;
 	border-radius: 10px;
 }
-
-/* .button:hover {
-	text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-	color: #222;
-} */
-
 .button-group:after {
 	content: '';
 	display: block;
 	clear: both;
 }
-
 .button-group .button {
 	float: left;
 	border-radius: 50%;
@@ -1736,7 +1729,6 @@ p.entry-meta {
 .button-group .button:hover {
 	border: 3px solid #8AC7C8;
 }
-
 .button-group .button:first-of-type {
 	background-color: #89C7C8;
 	line-height: 2;
@@ -1820,8 +1812,6 @@ p.entry-meta {
 	margin: 0 20px 20px;
 }
 
-
-
 /* Home page styles
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1885,8 +1875,11 @@ table figcaption {
 }
 .recycling-trades tr > td:nth-of-type(3) img {
 	width: 50px;
-	//display: block;
-	margin: 10px
+	display: block;
+	margin: 10px auto;
+}
+.recycling-trades tr > td:nth-of-type(3) {
+	width: 70px;
 }
 .recycling-trades tr > td:nth-of-type(2) {
 	width: 100px;
@@ -1966,7 +1959,6 @@ p.spoiler-link {
 nav#genesis-nav-primary,
 .site-footer {
    background-image: url('/wp-content/uploads/2019/05/circles-butter.jpg');
-   //background-image: url('/wp-content/uploads/2019/05/circles-butter.jpg');
 }
 .regular-habitats img {
 	width: 50px;
@@ -1979,7 +1971,6 @@ nav#genesis-nav-primary,
 .sidebar input {
 	padding: 6px 9px;
 	font-size: 14px;
-	//background-image: url('/wp-content/uploads/2019/05/circles-butter.jpg');
 }
 .home .content,
 article,
@@ -2018,7 +2009,7 @@ a.more-link.spoiler-alert {
 	display: block;
 	overflow: hidden;
 	content: "";
-	width: 170px;
+	width: 200px;
 }
 .clear {
 	clear: both;
@@ -2033,11 +2024,6 @@ a.more-link.spoiler-alert {
 	display: block;
 	margin: 5px auto;
 }
-/* .special-icon::before {
-	content: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png');
-	width: 50px;
-	display: block;
-} */
 .landforms td:first-child, th:first-child {
     width: 50px;
 }
