@@ -12,3 +12,12 @@
 .acf-table-body-cont {
 	white-space: pre-line;
 }
+
+/** Make shortcode text easy to select */
+/** May not work if a plugin like "Post Types Order" is active (likely `preventing default`, incl. selection) */
+.post-type-table td.shortcode.column-shortcode {
+	-webkit-user-select: all; /* Chrome 49+ */
+	-moz-user-select: all; /* Firefox 43+ */
+	-ms-user-select: all; /* No support yet */
+	user-select: all; /* Likely future */
+}
