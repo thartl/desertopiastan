@@ -2083,12 +2083,13 @@ a.more-link.spoiler-alert {
 	.field-guide-structure img {
 		width: calc(50% - 40px);
 	}
-}
-@media only screen and (min-width: 801px) {
 	.filters-button-group,
 	.filter-habitat {
 		display: block;
 	}
+}
+@media only screen and (min-width: 801px) {
+	
 }
 
 @media only screen and (min-width: 861px) {
