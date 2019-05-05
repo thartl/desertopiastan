@@ -231,9 +231,14 @@ function species_icon_list( $atts ) {
 
 
 // Add class to paragraphs with 30+ characters of text outside of tags
-//add_filter( 'the_content', 'mark_paragraphs_with_text_content' );
-function mark_paragraphs_with_text_content() {
+add_filter( 'the_content', __NAMESPACE__ . '\mark_paragraphs_with_text_content' );
+function mark_paragraphs_with_text_content( $content ) {
 
+	// TODO: filter out paragraphs - maybe just ones that do (not) start with another tag (not strong??...)
+
+//	d( $content );
+
+	return $content;
 
 }
 
