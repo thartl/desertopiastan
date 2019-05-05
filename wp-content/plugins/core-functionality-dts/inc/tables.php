@@ -166,7 +166,7 @@ function insert_image_srcset( $custom_shortcode ) {
 	// Sanity check (ID)
 	if ( ! $this_id ) {
 		// Something went wrong, don't replace the string
-		return $custom_shortcode;
+		return $custom_shortcode[0];
 	}
 
 	// Get intermediate image sizes, add full size
