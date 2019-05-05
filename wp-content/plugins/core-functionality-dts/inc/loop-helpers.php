@@ -205,7 +205,7 @@ function display_habitat_icons( $type ) {
 
 		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
 
-		$habitat_type = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
+		$habitat_type = strtolower( esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) ) );
 
         if ( $habitat_type ) {
             $habitat_class = array( 'class' => 'hab-' . $habitat_type . ' attachment-thumbnail size-thumbnail' );

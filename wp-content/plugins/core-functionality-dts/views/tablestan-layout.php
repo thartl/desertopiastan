@@ -11,13 +11,14 @@
 
 namespace ParkdaleWire\DTS_Core;
 
+
 $args = array(
-	'post_type' => 'table',
+	'post_type'  => 'table',
 	'meta_query' => array(
 		array(
-			'key' => 'table_id',
-			'value' => $table_id,
-			'type' => 'NUMERIC',
+			'key'     => 'table_id',
+			'value'   => $table_id,
+			'type'    => 'NUMERIC',
 			'compare' => '='
 		)
 	)
