@@ -1907,9 +1907,21 @@ table tr th {
 }
 .recycling-trades td:first-of-type {
 	border-right: 1px solid #eee;
+	width: 100px;
+}
+.recycling-trades td:nth-of-type(2) {
+	//max-width: 100px;
 }
 .recycling-trades td:nth-of-type(3) {
 	border-left: 1px solid #eee;
+}
+.recycling-trades td:nth-of-type(3) figure {
+	display: inline-block;
+	width: 100px;
+}
+.recycling-trades td:first-of-type img,
+.recycling-trades td:nth-of-type(2) img {
+	width: 70px;
 }
 p:empty { 
 	display: none;
