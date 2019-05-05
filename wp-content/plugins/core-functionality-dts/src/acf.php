@@ -152,7 +152,8 @@ class BE_ACF_Customizations {
 //		) );
 //
 //	}
-//}
+
+}
 
 new BE_ACF_Customizations();
 
