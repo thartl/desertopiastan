@@ -184,13 +184,13 @@ textarea:focus,
 }
 
 a {
-	color: #28979f;
+	color: #20787e;
 	text-decoration: none;
 }
 
 a:focus,
 a:hover {
-	color: #28979f;
+	color: #20787e;
 	text-decoration: none;
 	outline: 0;
 }
@@ -478,7 +478,7 @@ a.login {
 	margin: 5px 10px;
 }
 a.login:hover {
-	background-color: #28979f;
+	background-color: #20787e;
 }
 a.more-link.spoiler-alert,
 .modal__btn-primary {
@@ -511,6 +511,9 @@ a.more-link.spoiler-alert:hover,
 	top: -3px;
 	position: relative;
 }
+.display-posts-listing .spoiler-link a:hover {
+	background-color: #d67600;
+}
 
 button:focus,
 button:hover,
@@ -522,7 +525,7 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #28979f;
+	background-color: #20787e;
 	color: #fff;
 }
 
@@ -599,35 +602,7 @@ td:first-child,
 th:first-child {
 	padding-left: 0;
 }
-.landforms td:first-child, th:first-child {
-    width: 50px;
-}
-/* .special-icon::before {
-	content: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png');
-	width: 50px;
-	display: block;
-} */
-.special-icon {
-	padding-left: 45px;
-	background: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png') no-repeat;
-	background-size: 35px;
-}
-.manuals td:nth-child(2) img {
-	width: 50px;
-	display: block;
-	margin: 0 auto;
-}
-.manuals td > img {
-	border: 2px solid #888;
-	border-radius: 50%;
-	margin-right: 20px;
-	margin-bottom: 0;
-}
-.widget ul.display-posts-listing > li {
-	padding-bottom: 0;
-	margin-bottom: 5px;
 
-}
 
 /* ## Screen Reader Text
 --------------------------------------------- */
@@ -897,7 +872,7 @@ th:first-child {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: #28979f;
+	color: #20787e;
 }
 
 .widget-title {
@@ -964,7 +939,7 @@ img.alignright,
 	font-weight: 600;
 	margin: 0;
 	text-align: center;
-	//color: #28979f;
+	//color: #20787e;
 }
 
 .entry-content p.wp-caption-text {
@@ -1065,7 +1040,7 @@ img.alignright,
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: #28979f;
+	background-color: #20787e;
 	color: #fff;
 }
 
@@ -1351,7 +1326,7 @@ img.alignright,
 .sub-menu-toggle:hover {
 	background-color: #fff;
 	border-width: 0;
-	color: #28979f;
+	color: #20787e;
 }
 
 .menu-toggle {
@@ -1588,7 +1563,7 @@ p.entry-meta {
 .archive-pagination a:focus,
 .archive-pagination a:hover,
 .archive-pagination .active a {
-	background-color: #28979f;
+	background-color: #20787e;
 	color: #fff;
 }
 
@@ -1714,36 +1689,9 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
-
-/* # Play
----------------------------------------------------------------------------------------------------- */
-
-/* h1.entry-title::before {
-	content: "\258D";
-	color: #28979f;
-	height: 2.4rem;
-} */
-h1.entry-title {
-	margin-bottom: 60px;
-}
-
-img.alignleft {
-	margin: 0 24px 20px 0;
-}
-
-
 /* # Species Grid
 ---------------------------------------------------------------------------------------------------- */
 
-/********************* Filters and Sorting */
-.button {
-	
-	/* margin-bottom: 10px;
-	background: none;
-	color: #fff;
-	font-size: 16px; */
-	//cursor: pointer;
-}
 .filters-button-group .button {
 	line-height: 0;
 	margin: 5px;
@@ -1759,20 +1707,10 @@ img.alignleft {
 	border-radius: 10px;
 }
 
-.button:hover {
+/* .button:hover {
 	text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
 	color: #222;
-}
-
-.button:active,
-.button.is-checked {
-}
-
-.button.is-checked {
-	//color: #dddddd;
-}
-
-/* ---- button-group ---- */
+} */
 
 .button-group:after {
 	content: '';
@@ -1791,8 +1729,7 @@ img.alignleft {
 	font-size: 16px;
 	display: inline-block;
 }
-/* .button-group .button:active,
-.button-group .button:focus, */
+.button-group .button:active,
 .button-group .button.is-checked {
 	border: 3px solid #8AC7C8;
 }
@@ -1814,16 +1751,6 @@ img.alignleft {
 	width: 30px;
 	height: 30px;
 }
-
-/* .button.habitat-special {
-	padding: 0;
-	border: 0;
-}
-.button.habitat-special:hover {
-	padding: 0;
-	border: 0;
-} */
-
 
 /*********************** END: Filters and Sorting **/
 
@@ -1883,13 +1810,6 @@ img.alignleft {
 	font-size: 18px;
 	font-weight: 700;
 }
-.species-item .food {
-
-}
-.filters-button-group,
-.filter-habitat {
-		//display: none;
-}
 .postid-1508 h2 {
 	display: block;
 	clear: left;
@@ -1924,7 +1844,13 @@ h2.hero-text {
     margin-bottom: 30px;
     margin-top: 40px;
 }
+h1.entry-title {
+	margin-bottom: 60px;
+}
 
+img.alignleft {
+	margin: 0 24px 20px 0;
+}
 .entry-content ul.display-posts-listing {
 	margin: 0 0 20px 0;
 }
@@ -1966,7 +1892,7 @@ table figcaption {
 }
 #post-work-ship .recycling-trades img {
 	border-radius: 50%;
-	border: 2px solid #888;
+	border: 2px solid #88C7C8;
 }
 #post-work-ship .recycling-trades tr > td:nth-of-type(3) .wp-caption {
 	margin: 0 10px 5px;
@@ -2022,7 +1948,7 @@ td {
 	padding: 8px 12px;
 	border-radius: 50px;
 }
-img:not(.site-header img) {
+img:not(.wp-image-1390) {
 	border-radius: 10px;
 }
 p.spoiler-link {
@@ -2043,7 +1969,7 @@ nav#genesis-nav-primary,
 .regular-habitats img {
 	width: 50px;
 	display: block;
-	margin: 0 auto;
+	margin: 5px auto;
 }
 .sidebar .widget-title {
 	display: none;
@@ -2068,6 +1994,72 @@ body {
 a.more-link.spoiler-alert {
 	margin-left: 0;
 }
+.special-habitats-row img {
+    width: 60px;
+    height: 55px;
+    display: block;
+    margin: 5px auto;
+}
+.special-habitats-spoiler th,
+.special-items th {
+	text-align: left;
+	font-weight: 700;
+	font-size: 2rem;
+}
+.special-habitats-row figure {
+    width: 80px !important;
+    display: block;
+   
+}
+.entry-content p::before {
+	display: block;
+	overflow: hidden;
+	content: "";
+	width: 170px;
+}
+.clear {
+	clear: both;
+}
+.special-items td:first-child {
+	width: 100px;
+}
+.special-items {
+	margin-top: 30px;
+}
+.special-items img {
+	display: block;
+	margin: 5px auto;
+}
+/* .special-icon::before {
+	content: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png');
+	width: 50px;
+	display: block;
+} */
+.landforms td:first-child, th:first-child {
+    width: 50px;
+}
+.special-icon {
+	padding-left: 45px;
+	background: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png') no-repeat;
+	background-size: 35px;
+}
+.manuals td:nth-child(2) img {
+	width: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.manuals td > img {
+	border: 2px solid #88C7C8;
+	border-radius: 50%;
+	margin-right: 20px;
+	margin-bottom: 0;
+}
+.widget ul.display-posts-listing > li {
+	padding-bottom: 0;
+	margin-bottom: 5px;
+
+}
+ 
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
