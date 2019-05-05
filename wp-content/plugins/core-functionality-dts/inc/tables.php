@@ -149,6 +149,8 @@ function filter_responsive_image_output( $cell_content ) {
  */
 function insert_image_srcset( $custom_shortcode ) {
 
+	// TODO: escape ?? and elsewhere ??
+
 	// Get ID
 	preg_match( '/id=["\']?([\w-]+)/i', $custom_shortcode[0], $ids );
 
@@ -159,7 +161,7 @@ function insert_image_srcset( $custom_shortcode ) {
 	preg_match( '/align=["\']?([\w-]+)/i', $custom_shortcode[0], $alignments );
 
 	// Capture group is always in [1]
-	$this_id   = (int) $ids[1] ?? '';
+	$this_id   = $ids[1] ?? '';
 	$this_size = $sizes[1] ?? '';
 	$this_alignment = $alignments[1] ?? '';
 
