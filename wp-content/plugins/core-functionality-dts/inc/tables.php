@@ -201,12 +201,19 @@ function insert_image_srcset( $custom_shortcode ) {
 	// Get sizes
 	$sizes = wp_get_attachment_image_sizes( $this_id, $this_size );
 
+	// Get caption
+	$caption = wp_get_attachment_caption( $this_id );
+
 
 	// Layout img tag
-	$img_element = '<img class="' . $align_class . $size_class . '" ';
+	$img_element = '<figure class="wp-caption">';
+	$img_element .= '<img class="' . $align_class . $size_class . '" ';
 	$img_element .= 'src="' . $src . '" ';
 	$img_element .= 'alt width="' . $width . '" height="' . $height . '" ';
 	$img_element .= 'srcset="' . $srcset . '" sizes="' . $sizes . '">';
+	$img_element .= '<figcaption class="wp-caption-text">';
+	$img_element .= $caption;
+	$img_element .= '</figcaption></figure>';
 
 	return $img_element;
 
