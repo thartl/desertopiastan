@@ -150,13 +150,13 @@ function filter_responsive_image_output( $cell_content ) {
 function insert_image_srcset( $custom_shortcode ) {
 
 	// Get ID
-	preg_match( '/id=["\']?(\w+)/i', $custom_shortcode[0], $ids );
+	preg_match( '/id=["\']?([\w-]+)/i', $custom_shortcode[0], $ids );
 
 	// Get Size
-	preg_match( '/size=["\']?(\w+)/i', $custom_shortcode[0], $sizes );
+	preg_match( '/size=["\']?([\w-]+)/i', $custom_shortcode[0], $sizes );
 
 	// Get Alignment
-	preg_match( '/align=["\']?(\w+)/i', $custom_shortcode[0], $alignments );
+	preg_match( '/align=["\']?([\w-]+)/i', $custom_shortcode[0], $alignments );
 
 	// Capture group is always in [1]
 	$this_id   = (int) $ids[1] ?? '';
