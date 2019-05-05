@@ -241,11 +241,26 @@ function display_filter_sort_button_groups() {
 
 	echo '<button class="button default is-checked" data-filter="*">All</button>';
 
+	// We'll save term slugs here (minus any ending digits)
+	$slugs_array = array();
+
 	foreach ( $all_habitats as $habitat ) {
 
-		$term_type       = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
-		$term_type_class = $term_type ? ' habitat-' . strtolower( $term_type ) : '';
+        // Get slug, trim dashes and digits
+        $slug_trimmed = trim( $habitat->slug, '-0123456789' );
 
+		// Check if we already saw this (trimmed) slug
+        if ( in_array( $slug_trimmed, $slugs_array ) ) {
+            continue;
+        }
+        
+        // Save slug in array for next run.
+        $slugs_array[] = $slug_trimmed;
+
+        // Get meta and print button
+		$term_type       = esc_html( get_term_meta( $habitat->term_id, 'habitat_type', true ) );
+
+		$term_type_class = $term_type ? ' habitat-' . strtolower( $term_type ) : '';
 		$term_image_ID = (int) get_term_meta( $habitat->term_id, 'habitat_image', true );
 		$image_url     = wp_get_attachment_image( $term_image_ID, 'thumbnail' ) ?: '';
 
