@@ -66,13 +66,13 @@ function pw_base_enqueue_scripts_styles() {
 		pw_base_responsive_menu_settings()
 	);
 
-//	wp_enqueue_script(
-//		'global-js',
-//		get_stylesheet_directory_uri() . '/js/global.js',
-//		array( 'jquery' ),
-//		'1.0.0',
-//		true
-//	);
+	wp_enqueue_script(
+		'global-js',
+		get_stylesheet_directory_uri() . '/js/global.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
+	);
 
 }
 
