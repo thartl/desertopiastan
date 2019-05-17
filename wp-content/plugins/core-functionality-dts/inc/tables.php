@@ -91,9 +91,10 @@ add_shortcode( 'ImageSet', __NAMESPACE__ . '\image_set' );
 function image_set( $atts ) {
 
 	$a = shortcode_atts( array(
-		'id' => '',
-		'size' => '',
-		'align' => ''
+		'id'      => '',
+		'size'    => '',
+		'align'   => '',
+		'caption' => ''
 	), $atts );
 
 	if ( ! $a['id'] ) {
@@ -110,8 +111,6 @@ function image_set( $atts ) {
 	}
 
 	return insert_image_srcset( $attributes );
-
-
 
 }
 
@@ -160,10 +159,14 @@ function insert_image_srcset( $custom_shortcode ) {
 	// Get Alignment
 	preg_match( '/align=["\']?([\w-]+)/i', $custom_shortcode[0], $alignments );
 
+	// Get Caption
+	preg_match( '/caption=["](.*?)["]/i', $custom_shortcode[0], $captions );
+
 	// Capture group is always in [1]
-	$this_id   = $ids[1] ?? '';
-	$this_size = $sizes[1] ?? '';
+	$this_id        = $ids[1] ?? '';
+	$this_size      = $sizes[1] ?? '';
 	$this_alignment = $alignments[1] ?? '';
+	$this_caption = $captions[1] ?? '';
 
 	// Sanity check (ID)
 	if ( ! $this_id ) {
@@ -172,11 +175,11 @@ function insert_image_srcset( $custom_shortcode ) {
 	}
 
 	// Get intermediate image sizes, add full size
-	$sizes_array = get_intermediate_image_sizes();
+	$sizes_array   = get_intermediate_image_sizes();
 	$sizes_array[] = 'full';
 
 	// Get size + also maybe make class
-	$this_size = in_array( $this_size, $sizes_array ) ? $this_size : 'thumbnail';
+	$this_size  = in_array( $this_size, $sizes_array ) ? $this_size : 'thumbnail';
 	$size_class = ' size-' . $this_size;
 
 	// Make alignment class
@@ -186,11 +189,11 @@ function insert_image_srcset( $custom_shortcode ) {
 
 	// Get src url + sizes
 	$src_and_meta_array = wp_get_attachment_image_src( $this_id, $this_size );
-	$src = $width = $height = '';
+	$src                = $width = $height = '';
 	if ( $src_and_meta_array ) {
 
-		$src = $src_and_meta_array[0];
-		$width = $src_and_meta_array[1];
+		$src    = $src_and_meta_array[0];
+		$width  = $src_and_meta_array[1];
 		$height = $src_and_meta_array[2];
 
 	}
@@ -201,8 +204,8 @@ function insert_image_srcset( $custom_shortcode ) {
 	// Get sizes
 	$sizes = wp_get_attachment_image_sizes( $this_id, $this_size );
 
-	// Get caption
-	$caption = wp_get_attachment_caption( $this_id );
+	// Get caption - either from shortcode or from media meta
+	$caption = $this_caption ?: wp_get_attachment_caption( $this_id );
 
 
 	// Layout img tag
