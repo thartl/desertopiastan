@@ -951,6 +951,9 @@ img.alignright,
 .entry-content .wp-video {
 	margin: 0 0 28px;
 }
+img:not(.wp-image-1390) {
+	border-radius: 10px;
+}
 
 
 /* # Widgets
@@ -1885,9 +1888,12 @@ table figcaption {
 	width: 100px;
 	margin: 10px
 }
-#post-work-ship .recycling-trades img {
+#post-work-ship .recycling-trades img,
+.special-items img {
 	border-radius: 50%;
 	border: 2px solid #88C7C8;
+	margin: 0 auto;
+	display: block;
 }
 #post-work-ship .recycling-trades tr > td:nth-of-type(3) .wp-caption {
 	margin: 0 10px 5px;
@@ -1905,23 +1911,26 @@ table {
 table tr th {
 	text-align: center;
 }
+.recycling-trades th:first-child,
+.recycling-trades th:nth-child(2) {
+	width: 90px;
+}
+.recycling-trades td:nth-child(3) .wp-caption {
+	max-width: 60px;
+	vertical-align: top;
+}
+table.recycling-trades {
+	table-layout: fixed;
+}
 .recycling-trades td:first-of-type {
 	border-right: 1px solid #eee;
-	width: 100px;
+	
 }
-.recycling-trades td:nth-of-type(2) {
-	//max-width: 100px;
+.recycling-trades figure {
+	display: inline-block;
 }
 .recycling-trades td:nth-of-type(3) {
 	border-left: 1px solid #eee;
-}
-.recycling-trades td:nth-of-type(3) figure {
-	display: inline-block;
-	width: 100px;
-}
-.recycling-trades td:first-of-type img,
-.recycling-trades td:nth-of-type(2) img {
-	width: 70px;
 }
 p:empty { 
 	display: none;
@@ -1937,6 +1946,10 @@ td {
 	border: 4px solid pink;
 	border-radius: 50%;
 }
+.species-unlockable img {
+	border: 4px solid lightskyblue;
+	border-radius: 50%;
+}
 .species-regular img {
 	//border: 4px solid cornflowerblue;
 	border-radius: 50%;
@@ -1945,18 +1958,12 @@ td {
 	margin-bottom: 0;
 	padding: 20px 40px;
 }
-#search-3 input {
-	//border: 2px solid #D4761D;
-}
 #text-2 {
 	padding-top: 0;
 }
 .search-form-input {
 	padding: 8px 12px;
 	border-radius: 50px;
-}
-img:not(.wp-image-1390) {
-	border-radius: 10px;
 }
 p.spoiler-link {
 	margin-bottom: 0;
@@ -1976,6 +1983,21 @@ nav#genesis-nav-primary,
 	width: 50px;
 	display: block;
 	margin: 5px auto;
+	border: 2px solid #fff;
+	position: relative;
+}
+.regular-habitats img:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 2px solid #89C7C8;
+  border-radius: 50%;
+  min-width: 74px;
+  min-height: 74px;
 }
 .sidebar .widget-title {
 	display: none;
@@ -2011,6 +2033,9 @@ a.more-link.spoiler-alert {
 	text-align: left;
 	font-weight: 700;
 	font-size: 2rem;
+}
+.recycling-trades th {
+	text-align: center;
 }
 .special-habitats-row figure {
     width: 80px !important;
