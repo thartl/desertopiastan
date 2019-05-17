@@ -2060,7 +2060,79 @@ a.more-link.spoiler-alert {
 	margin-bottom: 5px;
 
 }
- 
+
+
+/* ## Sidr
+----------------------------------------------------------------- */
+#sidr-guide-index {
+	width: 85%;
+	/*left: 100%;*/
+	right: -100%;
+	background: #fff;
+	padding: 15px;
+	box-shadow: none !important;
+}
+.sidr-class-menu-toggle,
+.sidr-class-sub-menu-toggle {
+	display: block;
+}
+ul.sidr-class-menu-primary li a span {
+	color: #fff;
+}
+.sidr-class-nav-primary .sidr ul {
+	margin: 0;
+	border-top: 0;
+}
+body .sidr-class-nav-primary ul.sidr-class-menu-primary {
+	margin: 0;
+	border-bottom: 0;
+}
+body .sidr-class-nav-secondary ul.sidr-class-menu-secondary {
+	margin: 0;
+	border-top: 0;
+}
+
+#primary-nav-link-container {
+	display: block;
+	width: 50%;
+	text-align: right;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 600;
+	margin: 10px auto 15px;
+	font-size: 18px;
+	position: absolute;
+	top: 211px;
+	right: 15px;
+	z-index: 2000;
+}
+#primary-nav-link:focus {
+	outline: none;
+}
+#primary-nav-link span {
+	position: relative;
+	top: 4px;
+	right: 5px;
+}
+#primary-nav-link span::before {
+
+}
+
+#primary-nav-container {
+	display: none;
+}
+.sidr-class-screen-reader-text {
+	display: none;
+}
+button.sidr-class-menu-toggle {
+	background-color: transparent;
+	border-radius: 0;
+}
+/** Main menu toggle */
+button#genesis-mobile-nav-primary {
+	width: 50%;
+	margin: 0;
+	text-align: left;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -2228,6 +2300,9 @@ a.more-link.spoiler-alert {
 	.site-header .widget-area {
 		text-align: right;
 	}
+	#primary-nav-link-container {
+		display: none;
+	}
 	.sidebar-primary {
 		width: 300px;
 		overflow: auto;
@@ -2235,10 +2310,15 @@ a.more-link.spoiler-alert {
 	}
 	.sidebar-primary.fixed {
 		position: fixed;
-		top: 16px;
+		top: 20px;
 		right: calc((100vw - 960px) / 2);
 		bottom: 0;
-		margin: 0 0 16px;
+		margin: 0 0 20px;
+		-webkit-transition: bottom 0.18s;
+		-moz-transition: bottom 0.18s;
+		-ms-transition: bottom 0.18s;
+		-o-transition: bottom 0.18s;
+		transition: bottom 0.18s;
 	}
 	.sidebar-secondary {
 		width: 180px;
