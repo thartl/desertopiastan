@@ -267,13 +267,13 @@ h6 {
 }
 
 h1 {
-	font-size: 36px;
-	font-size: 3.6rem;
+	font-size: 30px;
+	font-size: 3rem;
 }
 
 h2 {
-	font-size: 30px;
-	font-size: 3rem;
+	font-size: 26px;
+	font-size: 2.6rem;
 }
 h2, h2.entry-title {
 	margin-bottom: 15px;
@@ -660,7 +660,7 @@ th:first-child {
 
 .site-inner {
 	clear: both;
-	padding: 5% 5% 0;
+	padding: 0;
 	word-wrap: break-word;
 }
 
@@ -1726,11 +1726,14 @@ p.entry-meta {
 	display: inline-block;
 }
 .button-group .button:active,
+.button-group .button:focus,
 .button-group .button.is-checked {
 	border: 3px solid #8AC7C8;
+	border: 3px solid pink;
 }
 .button-group .button:hover {
 	border: 3px solid #8AC7C8;
+	border: 3px solid pink;
 }
 .button-group .button:first-of-type {
 	background-color: #89C7C8;
@@ -2028,11 +2031,13 @@ a.more-link.spoiler-alert {
     margin: 5px auto;
 }
 .special-habitats-spoiler th,
+.table-legendary th,
 .special-items th,
 .recycling-trades th {
 	text-align: left;
 	font-weight: 700;
-	font-size: 2rem;
+	font-size: 1.7rem;
+	vertical-align: top;
 }
 .recycling-trades th {
 	text-align: center;
@@ -2085,6 +2090,17 @@ a.more-link.spoiler-alert {
 	margin-bottom: 5px;
 
 }
+.table-legendary th {
+	column-span: 3;
+}
+.table-legendary img {
+	padding: 0px 7px;
+	margin-bottom: 5px;
+}
+.table-legendary figcaption {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
  
 
 /* # Media Queries
@@ -2095,6 +2111,13 @@ a.more-link.spoiler-alert {
 	}
 
 }
+@media only screen and (min-width: 451px) {
+	.site-inner {
+		padding: 5% 5% 0;
+	}
+
+}
+
 @media only screen and (min-width: 601px) {
 	.species-item {
 		width: 25%;
@@ -2105,6 +2128,15 @@ a.more-link.spoiler-alert {
 	.filters-button-group,
 	.filter-habitat {
 		display: flex;
+	}
+	h1 {
+		font-size: 36px;
+	}
+	.special-habitats-spoiler th,
+	.table-legendary th,
+	.special-items th,
+	.recycling-trades th {
+		font-size: 2rem;
 	}
 	
 }
