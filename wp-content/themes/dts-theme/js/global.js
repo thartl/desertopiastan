@@ -15,12 +15,18 @@
   $( document ).ready( function() {
 
 
+    let sidebar = document.getElementById( 'genesis-sidebar-primary' );
+
+    console.log( sidebar );
+
+    if ( !sidebar ) {
+      return;
+    }
+
     let documentHeight = document.body.clientHeight;
     let windowHeight = window.innerHeight;
 
     let mainContent = document.getElementById( 'genesis-content' );
-
-    let sidebar = document.getElementById( 'genesis-sidebar-primary' );
 
     let footer = document.getElementsByClassName( 'site-footer' )[0];
     let footerHeight = footer.clientHeight;
@@ -68,7 +74,9 @@
       let bodyScroll = document.body.getBoundingClientRect().bottom;
       let footerPosition = bodyScroll - windowHeight - footerHeight;
 
-      if ( mainFromTop <= 16 ) {
+      // Make `position: fixed` (etc.)
+      // Or reverse that
+      if ( mainFromTop <= 20 ) {
 
         sidebar.classList.add( 'fixed' );
 
@@ -79,15 +87,18 @@
 
       }
 
-
+      // Raise bottom of sidebar when footer comes into view
+      // Or reverse that
       if ( footerPosition <= 0 ) {
 
         sidebar.style.bottom = footerHeight + 'px';
+        sidebar.style.marginBottom = '80px';
 
       }
       else {
 
         sidebar.style.bottom = '';
+        sidebar.style.marginBottom = '';
 
       }
 
