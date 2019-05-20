@@ -17,8 +17,6 @@
 
     let sidebar = document.getElementById( 'genesis-sidebar-primary' );
 
-    console.log( sidebar );
-
     if ( !sidebar ) {
       return;
     }
