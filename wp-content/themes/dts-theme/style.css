@@ -2047,12 +2047,14 @@ a.more-link.spoiler-alert {
     display: block;
    
 }
-.entry-content p::before {
+
+.entry-content p:not(.signup-button)::before {
 	display: block;
 	overflow: hidden;
 	content: "";
 	width: 200px;
 }
+
 .clear {
 	clear: both;
 }
