@@ -8,7 +8,6 @@
  * @license     GNU General Public License 2.0+
  */
 
-
 ( function( $ ) {
 
 
@@ -67,6 +66,7 @@
     function positionSidebar() {
 
       scrollTicking = false;
+      let sidebarIsFixed = false;
 
       let mainFromTop = mainContent.getBoundingClientRect().top;
       let bodyScroll = document.body.getBoundingClientRect().bottom;
@@ -76,18 +76,29 @@
       // Or reverse that
       if ( mainFromTop <= 20 ) {
 
+        // Bail if sidebar is longer than main content
+        // TODO: don't just bail here: also remove .fixed as needed + maybe don't bail from all the footer logic so early...
+        // TODO: actually, maybe cannot remove .fixed based on height comparison, as sticky sidebar can be "stubbied"
+        // TODO: may have to rethink the logic...
+        if( sidebar.offsetHeight > mainContent.offsetHeight ){
+          return;
+        }
+console.log( sidebar.offsetHeight );
+console.log( mainContent.offsetHeight );
         sidebar.classList.add( 'fixed' );
+        sidebarIsFixed = true;
 
       }
       else {
 
         sidebar.classList.remove( 'fixed' );
+        sidebarIsFixed = false;
 
       }
 
       // Raise bottom of sidebar when footer comes into view
       // Or reverse that
-      if ( footerPosition <= 0 ) {
+      if ( sidebarIsFixed && footerPosition <= 0 ) {
 
         sidebar.style.bottom = footerHeight + 'px';
         sidebar.style.marginBottom = '80px';
