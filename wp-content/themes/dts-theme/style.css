@@ -1808,7 +1808,7 @@ p.entry-meta {
 	font-size: 18px;
 	font-weight: 700;
 }
-.postid-1508 h2 {
+.postid-1508 h2:not(.modal__title) {
 	display: block;
 	clear: left;
 	margin-top: 60px;
