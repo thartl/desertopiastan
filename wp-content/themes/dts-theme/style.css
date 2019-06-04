@@ -2173,9 +2173,9 @@ button.sidr-class-menu-toggle {
 }
 /** Main menu toggle */
 button#genesis-mobile-nav-primary {
-	width: 50%;
-	margin: 0;
-	text-align: left;
+	/*width: 50%;*/
+	/*margin: 0;*/
+	/*text-align: left;*/
 }
 
 

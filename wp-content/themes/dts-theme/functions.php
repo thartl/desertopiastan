@@ -85,17 +85,17 @@ function pw_base_enqueue_scripts_styles() {
 
 
 // Wrap primary menu for Sidr
-add_action( 'genesis_sidebar', 'sk_add_opening_div', 9 );
+//add_action( 'genesis_sidebar', 'sk_add_opening_div', 9 );
 function sk_add_opening_div() {
 	echo '<div id="guide-index-side">';
 }
-add_action( 'genesis_sidebar', 'sk_add_closing_div', 11 );
+//add_action( 'genesis_sidebar', 'sk_add_closing_div', 11 );
 function sk_add_closing_div() {
 	echo '</div>';
 }
 
 //* Add hamburger font icon below Primary nav
-add_action( 'genesis_after_header', 'sk_hamburger_menu', 11 );
+//add_action( 'genesis_after_header', 'sk_hamburger_menu', 11 );
 function sk_hamburger_menu() {
 	echo '<div id="primary-nav-link-container"><div class="wrap"><a id="primary-nav-link" href="#primary-nav-container"><span class="dashicons dashicons-menu"></span>Guide</a></div></div>';
 }
