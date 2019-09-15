@@ -29,12 +29,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'DTS_CORE_FUNCTIONALITY_PLUGIN', __FILE__ );
 define( 'DTS_CORE_FUNCTIONALITY_DIR', trailingslashit( __DIR__ ) );
 
-$plugin_url = plugin_dir_url( __FILE__ );
+$DTS_Core_plugin_url = plugin_dir_url( __FILE__ );
 if ( is_ssl() ) {
-	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
+	$DTS_Core_plugin_url = str_replace( 'http://', 'https://', $DTS_Core_plugin_url );
 }
 
-define( 'DTS_CORE_FUNCTIONALITY_URL', $plugin_url );
+define( 'DTS_CORE_FUNCTIONALITY_URL', $DTS_Core_plugin_url );
 define( 'DTS_CORE_FUNCTIONALITY_TEXT_DOMAIN', 'dts-core' );
 
 // Bump this version number to force ACF sync
