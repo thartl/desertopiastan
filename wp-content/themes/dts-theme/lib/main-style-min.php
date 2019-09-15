@@ -42,8 +42,7 @@ function genesis_cache_bust_load_stylesheet() {
 
 
 	/** MINIFICATION - turn off for development, if TH_WHICH_ENVIRONMENT (set by Which Environment) is not being defined */
-/** DEACTIVATED FOR DEVELOPMENT: (false in if statement) */
-	if ( false || ! defined( 'TH_WHICH_ENVIRONMENT' ) || TH_WHICH_ENVIRONMENT == 'live' ) {
+	if ( ! defined( 'TH_WHICH_ENVIRONMENT' ) || TH_WHICH_ENVIRONMENT == 'live' ) {
 
 		if ( file_exists( $min_stylesheet_location ) ) {
 
@@ -64,7 +63,6 @@ function genesis_cache_bust_load_stylesheet() {
 		}
 
 	}
-/** DEACTIVATED FOR DEVELOPMENT: (false in if statement) */
 
 	// Enqueue the stylesheet.
 	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified );
