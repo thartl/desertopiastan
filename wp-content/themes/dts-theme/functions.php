@@ -70,7 +70,7 @@ function pw_base_enqueue_scripts_styles() {
 		'global-js',
 		get_stylesheet_directory_uri() . '/js/global.js',
 		array( 'jquery' ),
-		'1.0.0',
+		filemtime( get_stylesheet_directory() . '/js/global.js' ),
 		true
 	);
 
@@ -201,7 +201,7 @@ function pw_base_comments_gravatar( $args ) {
 }
 
 
-// Remove custom Genesis custom header style
+// Remove Genesis custom header style
 //remove_action( 'wp_head', 'genesis_custom_header_style' );
 /**********************************
  *
