@@ -242,10 +242,17 @@ function species_icon_list( $atts ) {
  */
 function exclude_posts_from_blog_page( $query ) {
 
-	if ( $query->is_home() && $query->is_main_query() ) {
+//	if ( $query->is_home() && $query->is_main_query() ) {
+//
+//		$query->set( 'post__not_in', array( 1660 ) );
+//	}
 
-		$query->set( 'post__not_in', array( 1660 ) );
-	}
+// OR:
+
+//	if ( $query->is_search() && $query->is_main_query() ) {
+//
+//	}
+
 }
 
 
