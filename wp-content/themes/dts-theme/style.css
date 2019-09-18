@@ -2171,6 +2171,7 @@ button.sidr-class-menu-toggle {
 	background-color: transparent;
 	border-radius: 0;
 }
+
 /** Main menu toggle */
 button#genesis-mobile-nav-primary {
 	/*width: 50%;*/
@@ -2545,7 +2546,11 @@ button#genesis-mobile-nav-primary {
 	.filter-habitat {
 		display: none;
 	} */
-	
+	/** Show "Index" post only on mobile */
+	body.blog #post-index {
+		display: none;
+	}
+
 }
 
 

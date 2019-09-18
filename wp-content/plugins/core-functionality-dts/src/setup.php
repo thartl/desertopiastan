@@ -230,6 +230,26 @@ function species_icon_list( $atts ) {
 }
 
 
+//add_action( 'pre_get_posts', __NAMESPACE__ . '\exclude_posts_from_blog_page' );
+/**
+ * Remove some posts from the blog page.
+ *
+ * Deactivated. Instead hidden in css on desktop screens only.
+ *
+ * @param $query
+ *
+ * @return void
+ */
+function exclude_posts_from_blog_page( $query ) {
+
+	if ( $query->is_home() && $query->is_main_query() ) {
+
+		$query->set( 'post__not_in', array( 1660 ) );
+	}
+}
+
+
+
 // Add class to paragraphs with 30+ characters of text outside of tags
 add_filter( 'the_content', __NAMESPACE__ . '\mark_paragraphs_with_text_content' );
 function mark_paragraphs_with_text_content( $content ) {
