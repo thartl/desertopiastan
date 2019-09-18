@@ -256,6 +256,22 @@ function exclude_posts_from_blog_page( $query ) {
 }
 
 
+add_action( 'genesis_before_loop', __NAMESPACE__ . '\show_excerpts_on_search_page' );
+/**
+ * Show excerpts on the search results page, even if archives are set to show full content.
+ *
+ * @return void
+ */
+function show_excerpts_on_search_page() {
+
+	if ( is_search() ) {
+
+		add_filter( 'genesis_pre_get_option_content_archive', function() {
+			return 'excerpts';
+		} );
+	}
+}
+
 
 // Add class to paragraphs with 30+ characters of text outside of tags
 add_filter( 'the_content', __NAMESPACE__ . '\mark_paragraphs_with_text_content' );
