@@ -2073,7 +2073,7 @@ a.more-link.spoiler-alert {
 }
 .special-icon {
 	padding-left: 45px;
-	background: url('http://desertopiastan.local/wp-content/uploads/2019/04/special.png') no-repeat;
+	background: url('/wp-content/uploads/2019/04/special.png') no-repeat;
 	background-size: 35px;
 }
 .manuals td:nth-child(2) img {
