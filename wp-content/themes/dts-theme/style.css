@@ -2104,7 +2104,9 @@ a.more-link.spoiler-alert {
 	font-size: 1.8rem;
 	font-weight: 400;
 }
-
+.home h2.entry-title {
+	display: none;
+}
 
 /* ## Sidr
 ----------------------------------------------------------------- */
