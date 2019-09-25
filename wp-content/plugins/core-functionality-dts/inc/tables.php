@@ -205,7 +205,9 @@ function insert_image_srcset( $custom_shortcode ) {
 	$sizes = wp_get_attachment_image_sizes( $this_id, $this_size );
 
 	// Get caption - either from shortcode or from media meta
-	$caption = $this_caption ?: wp_get_attachment_caption( $this_id );
+//	$caption = $this_caption ?: wp_get_attachment_caption( $this_id );
+	// Another version: if no caption is passed through shortcode, don't look to media library.
+	$caption = $this_caption ?: '';
 
 
 	// Layout img tag
