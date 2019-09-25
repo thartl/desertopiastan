@@ -2107,6 +2107,101 @@ a.more-link.spoiler-alert {
 .home h2.entry-title {
 	display: none;
 }
+.special-habitats-spoiler img {
+	margin-bottom: 0;
+}
+.special-habitats-spoiler td {
+	display: block;
+}
+.special-habitats-spoiler thead {
+	display: none;
+}
+.special-habitats-spoiler tr {
+	margin: 30px 0;
+	display: block;
+}
+.special-habitats-spoiler tbody td:first-of-type {
+	float: left;
+}
+.special-habitats-spoiler tbody td:nth-of-type(2) {
+	float: left;
+	font-size: 2.2rem;
+	font-weight: 500;
+	padding-top: 20px;
+}
+.special-habitats-spoiler tbody td:nth-of-type(3)::before {
+	content: "Requirements to Create: ";
+	font-weight: 700;
+}
+.special-habitats-spoiler tbody td:nth-of-type(3) {
+	clear: left;
+}
+.special-habitats-spoiler tbody td:nth-of-type(4)::before {
+	content: "Species Unlocked (Non-Legendary): ";
+	font-weight: 700;
+}
+.special-habitats-spoiler tbody tr:last-of-type td:nth-of-type(3)::before {
+	content: none;
+	font-weight: 700;
+}
+.special-habitats-spoiler tbody tr:last-of-type td:nth-of-type(4)::before {
+	content: none;
+	font-weight: 700;
+}
+
+.legendary-creatures td {
+	display: block;
+}
+.legendary-creatures thead {
+	display: none;
+}
+.legendary-creatures tr {
+	display: block;
+	margin: 30px 0;
+	height: auto !important;
+}
+.legendary-creatures tbody td:first-of-type {
+	float: left;
+}
+.legendary-creatures tbody td:nth-of-type(2) {
+	height: auto !important;
+	float: left;
+}
+.legendary-creatures tbody td:nth-of-type(3) {
+	clear: left;
+}
+.legendary-creatures td:nth-of-type(3)::before {
+	content: "Where/How to Find: ";
+	font-weight: 700;
+}
+
+
+.table-legendary td {
+	display: block;
+}
+.table-legendary thead {
+	display: none;
+}
+.table-legendary tr {
+	display: block;
+	margin: 30px 0;
+	height: auto !important;
+}
+.table-legendary tbody td:first-of-type {
+	float: left;
+}
+.table-legendary tbody td:nth-of-type(2) {
+	height: auto !important;
+	float: left;
+}
+.table-legendary tbody td:nth-of-type(3) {
+	clear: left;
+}
+.table-legendary td:nth-of-type(3)::before {
+	content: "Where/How to Find: ";
+	font-weight: 700;
+}
+
 
 /* ## Sidr
 ----------------------------------------------------------------- */
@@ -2195,6 +2290,41 @@ button#genesis-mobile-nav-primary {
 		padding: 5% 5% 0;
 	}
 
+}
+@media only screen and (min-width: 530px) {
+	.special-habitats-spoiler img {
+		margin-bottom: 10px;
+	}
+	.special-habitats-spoiler td {
+		display: table-cell;
+	}
+	.special-habitats-spoiler thead {
+		display: table-header-group;
+	}
+	.special-habitats-spoiler tr {
+		//margin: 0;
+		display: table-row;
+	}
+	.special-habitats-spoiler tbody td:first-of-type {
+		float: none;
+	}
+	.special-habitats-spoiler tbody td:nth-of-type(2) {
+		float: none;
+		font-size: 20px;
+		font-weight: 400;
+		padding-top: 6px;
+	}
+	.special-habitats-spoiler tbody td:nth-of-type(3)::before {
+		content: none;
+		//font-weight: 700;
+	}
+	.special-habitats-spoiler tbody td:nth-of-type(3) {
+		clear: left;
+	}
+	.special-habitats-spoiler tbody td:nth-of-type(4)::before {
+		content: none;
+		//font-weight: 700;
+	}
 }
 
 @media only screen and (min-width: 601px) {
