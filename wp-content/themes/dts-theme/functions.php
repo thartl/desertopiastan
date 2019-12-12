@@ -361,5 +361,33 @@ function amy_custom_sizes( $sizes ) {
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
 
+// looking for where bbpress.css is enqueued
+//$th_wp_styles = '';
+$th_wp_styles = array();
 
+//add_action( 'wp_enqueue_scripts', 'pw_base_test_enqueued_styles', 1 );
+function pw_base_test_enqueued_styles() {
+
+	global $th_wp_styles;
+
+	$th_wp_styles = wp_styles();
+
+}
+//add_filter( 'bbp_get_template_stack', 'th_read_bbp_template_stack', 1, 10 );
+function th_read_bbp_template_stack( $stack ) {
+
+	global $th_wp_styles;
+
+	$th_wp_styles[] = $stack;
+}
+add_action( 'genesis_after_content', 'th_test_output' );
+function th_test_output() {
+
+	global $th_wp_styles;
+
+	echo '<h2>TEST OUTPUT:</h2>';
+
+	d( $th_wp_styles );
+
+}
 
