@@ -11,6 +11,7 @@
 
 namespace ParkdaleWire\DTS_Core;
 
+use function get_field;
 
 $args = array(
 	'post_type'  => 'table',
