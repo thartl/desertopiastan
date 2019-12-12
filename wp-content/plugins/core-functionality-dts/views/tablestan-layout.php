@@ -18,7 +18,6 @@ if ( ! function_exists( 'get_field' ) ) {
 }
 
 
-
 $args = array(
 	'post_type'  => 'table',
 	'meta_query' => array(
