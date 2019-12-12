@@ -13,6 +13,12 @@ namespace ParkdaleWire\DTS_Core;
 
 use function get_field;
 
+if ( ! function_exists( 'get_field' ) ) {
+	return;
+}
+
+
+
 $args = array(
 	'post_type'  => 'table',
 	'meta_query' => array(
@@ -28,7 +34,6 @@ $args = array(
 $this_table_id = get_posts( $args )[0]->ID;
 
 wp_reset_postdata();
-
 
 $table = get_field( 'dts_table_content', $this_table_id );
 
