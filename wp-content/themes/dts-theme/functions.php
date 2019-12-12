@@ -380,7 +380,7 @@ function th_read_bbp_template_stack( $stack ) {
 
 	$th_wp_styles[] = $stack;
 }
-add_action( 'genesis_after_content', 'th_test_output' );
+//add_action( 'genesis_after_content', 'th_test_output' );
 function th_test_output() {
 
 	global $th_wp_styles;
