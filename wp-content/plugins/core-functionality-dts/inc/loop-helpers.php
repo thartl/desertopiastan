@@ -162,7 +162,6 @@ function habitat_classes() {
 		echo '';
 
 	}
-
 }
 
 

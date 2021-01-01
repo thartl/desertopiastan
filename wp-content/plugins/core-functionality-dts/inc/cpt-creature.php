@@ -30,7 +30,10 @@ class CPT_Species {
 		// Actions
 		add_action( 'init', array( $this, 'register_tax' ) );
 		add_action( 'init', array( $this, 'register_cpt' ) );
+
+		// Yep, "gettext" is a filter...
 		add_action( 'gettext', array( $this, 'title_placeholder' ) );
+
 		add_action( 'pre_get_posts', array( $this, 'species_query' ) );
 		add_action( 'template_redirect', array( $this, 'redirect_single' ) );
 
@@ -180,7 +183,7 @@ class CPT_Species {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'species' == $post->post_type && 'Enter title here' == $translation ) {
+		if ( isset( $post ) && 'species' == $post->post_type && 'Add title' == $translation ) {
 			$translation = 'Enter Name Here';
 		}
 

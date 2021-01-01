@@ -278,7 +278,7 @@ function show_excerpts_on_search_page() {
 
 
 // Add class to paragraphs with 30+ characters of text outside of tags
-add_filter( 'the_content', __NAMESPACE__ . '\mark_paragraphs_with_text_content' );
+//add_filter( 'the_content', __NAMESPACE__ . '\mark_paragraphs_with_text_content' );
 function mark_paragraphs_with_text_content( $content ) {
 
 	// TODO: filter out paragraphs - maybe just ones that do (not) start with another tag (not strong??...)
@@ -288,4 +288,26 @@ function mark_paragraphs_with_text_content( $content ) {
 	return $content;
 
 }
+
+
+//add_action( 'loop_start', __NAMESPACE__ . '\test_activation' );
+/** @noinspection PhpUnused */
+function test_activation() {
+
+	if ( ! function_exists( 'd' ) ) {
+		return;
+	}
+
+	global $post, $wp;
+
+//	$terms = wp_get_post_terms( $post->ID, 'category' );
+
+//	$current_url = home_url( add_query_arg( array(), $wp->request ) );
+
+//	d( add_query_arg( array(), $wp->request ) );
+//	d( $wp->request );
+//	d( $current_url );
+
+}
+
 
